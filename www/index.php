@@ -2,9 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>fnev.eu - Astronaute back-end</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>fnev.eu - Astronaute back-end @Wiztopic - Paris</title>
+  <meta name="description" content="Florian Neveu, développeur web adepte de PHP, Symfony, et de la conception d'API RESTful.">
+  <meta name="keyword" content="Florian Neveu, fnev.eu, développeur, web, api, wiztopic">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="stylesheets/screen.css" media="screen, projection" type="text/css">
   <link rel="stylesheet" href="stylesheets/print.css" media="print" type="text/css">
@@ -12,9 +16,9 @@
     <link rel="stylesheet" href="stylesheets/ie.css" media="screen, projection" type="text/css">
   <![endif]-->
   <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 
 <body>
