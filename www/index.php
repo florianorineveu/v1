@@ -42,7 +42,7 @@
   <footer>
     <p>
       &copy; <?php echo date('Y'); ?> - Florian Neveu - Tous droits réservés.<br>
-      Site créé par mes mains avec <span class="c-title">&hearts;</span>.
+      Site créé <a href="https://github.com/fnev-eu/fnev.eu">par mes mains</a> avec <span class="c-title">&hearts;</span>.
     </p>
   </footer>
 
