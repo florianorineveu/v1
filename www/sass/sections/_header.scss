@@ -1,0 +1,47 @@
+header {
+    background-image: image-url('background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+
+    h1 {
+        color: #e84c3c;
+        font-family: "proxima-nova";
+        font-size: 2em;
+        font-weight: 900;
+        line-height: 1.2em;
+        margin-top: 50vh;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin-top: 1.8em;
+        + p {
+            color: #2952d8;
+        }
+    }
+
+    .pull-right {
+        color: #666666;
+        font-size: 0.8em;
+    }
+}
+
+#logo {
+    @include transition-property(opacity);
+    display: block;
+    opacity: .6;
+    position: absolute;
+    top: 100px;
+    width: 80px;
+
+    img {
+        height: auto;
+        width: 80px;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
