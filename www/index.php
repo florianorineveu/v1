@@ -20,36 +20,25 @@
 <body>
   <header>
     <div class="container">
-      <img src="images/logo.png">
-      <h1>
-        fnev.eu<br>
-        <abbr title="Développeur">Astronaute</abbr>*<br>
-        back-end
-      </h1>
+      <a href="/" id="logo">
+        <img src="images/logo.png">
+      </a>
+
       <div class="row">
-        <p class="col-md-4">Florian Neveu, développeur PHP/Symfony à Paris. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat.</p>
+        <div class="col-md-4">
+          <h1>
+            fnev.eu,<br>
+            <abbr title="Développeur">Spationaute</abbr>*<br>
+            back-end
+          </h1>
+          <p>Je suis Florian Neveu, développeur web chez <a href="https://fr.wiztopic.com">@Wiztopic</a> à Paris. Je travaille essentiellement avec <abbr title="Hypertext Preprocessor">PHP</abbr>, Symfony et plus récemment MongoDB. Depuis quelque temps, je me spécialise dans la conception d'<abbr title="Interface de programmation">API</abbr> <abbr title="REpresentational State Transfer">RESTful</abbr>.</p>
+          <p>Je ne suis pas à l'écoute d'opportunités professionnelles, je suis très bien où je suis. Néanmoins, si vous êtes une association/un particulier et que vous souhaitez monter un projet, n'hésitez pas à me contacter ! (-;</p>
+        </div>
       </div>
-      <div class="row">
-        <p class="col-md-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-      <p class="pull-right">*développeur</p>
+      <span class="pull-right">*développeur</span>
     </div>
   </header>
 
-  <!-- <section id="bio">
-    <div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-    <aside>
-
-    </aside>
-  </section> -->
   <script src="https://use.typekit.net/dya2brt.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}
   </script>
