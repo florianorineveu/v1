@@ -6,40 +6,39 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-    padding-bottom: 5em;
-}
 
-header img {
-    height: auto;
-    opacity: .6;
-    position: absolute;
-    top: 100px;
-    width: 80px;
-}
+    img {
+        height: auto;
+        opacity: .6;
+        position: absolute;
+        top: 100px;
+        width: 80px;
+    }
 
-header h1 {
-    color: #e84c3c;
-    font-family: "proxima-nova";
-    font-size: 2em;
-    font-weight: 900;
-    line-height: 1.2em;
-    margin-top: 50vh;
-    text-transform: uppercase;
-}
+    h1 {
+        color: #e84c3c;
+        font-family: "proxima-nova";
+        font-size: 2em;
+        font-weight: 900;
+        line-height: 1.2em;
+        margin-top: 50vh;
+        text-transform: uppercase;
+    }
 
-header div > div {
-    color: #cccccc;
-    margin-top: 1.8em;
-}
+    div > div {
+        color: #cccccc;
+        margin-top: 1.8em;
+    }
 
-header div > div + div {
-    color: #2952d8;
-    margin-top: 1.8em;
-}
+    div > div + div {
+        color: #2952d8;
+        margin-top: 1.8em;
+    }
 
-header .pull-right {
-    color: #666666;
-    font-size: 0.8em;
+    .pull-right {
+        color: #666666;
+        font-size: 0.8em;
+    }
 }
 
 p {
