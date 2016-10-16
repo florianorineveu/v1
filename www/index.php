@@ -25,7 +25,7 @@
       </a>
 
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-5">
           <h1>
             fnev.eu,<br>
             <abbr title="Développeur">Spationaute</abbr>*<br>
@@ -38,6 +38,13 @@
       <span class="pull-right">*développeur</span>
     </div>
   </header>
+
+  <footer>
+    <p>
+      &copy; <?php echo date('Y'); ?> - Florian Neveu - Tous droits réservés.<br>
+      Site créé par mes mains avec <span class="c-title">&hearts;</span>.
+    </p>
+  </footer>
 
   <script src="https://use.typekit.net/dya2brt.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}

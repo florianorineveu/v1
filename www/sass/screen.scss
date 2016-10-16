@@ -1,13 +1,29 @@
 @import "compass/reset";
 @import "compass/css3";
+@import "compass/typography";
+
+@import "libs/fonts";
+
 @import "sections/*.*";
 
-body {
-    color: #cccccc;
-    font-family: "ff-chambers-sans-web";
-    font-weight: 600;
+html, body {
+    @include ff-chambers-sans;
+    color: $corpus;
+    font-size: 16px;
 }
 
 p {
-    line-height: 1.5em;
+    line-height: 1.8em;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+    &:hover {
+        color: $highlight;
+    }
+}
+
+.c-title {
+    color: $title;
 }
