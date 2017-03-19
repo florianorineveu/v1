@@ -1,4 +1,5 @@
 footer {
+    color: $soft;
     padding: 15px 0;
     p {
         font-weight: 500;
@@ -7,6 +8,7 @@ footer {
         text-align: center;
 
         span {
+            color: $corpus;
             display: inline-block;
             animation: heartbeat 1s infinite;
         }
