@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>fnev.eu - Astronaute back-end @Wiztopic - Paris</title>
-  <meta name="description" content="Florian Neveu, développeur web adepte de PHP, Symfony, et de la conception d'API RESTful.">
-  <meta name="keyword" content="Florian Neveu, fnev.eu, développeur, web, api, wiztopic">
+  <meta name="description" content="Florian Neveu, développeur web adepte de PHP, Symfony, de la conception d'API RESTful et de l'Espace'">
+  <meta name="keyword" content="Florian Neveu, fnev.eu, développeur, web, api, rest, wiztopic">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="stylesheets/screen.css" media="screen, projection" type="text/css">
@@ -22,31 +22,30 @@
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <a href="/" id="logo">
-        <img src="images/logo.png">
-      </a>
-
-      <div class="row">
-        <div class="col-md-5">
-          <h1>
-            fnev.eu,<br>
-            <abbr title="Développeur">Spationaute</abbr>*<br>
-            back-end
-          </h1>
-          <p>Je suis Florian Neveu, développeur web chez <a href="https://fr.wiztopic.com">@Wiztopic</a> à Paris. Je travaille essentiellement avec <abbr title="Hypertext Preprocessor">PHP</abbr>, Symfony et plus récemment MongoDB. Depuis quelque temps, je me spécialise dans la conception d'<abbr title="Interface de programmation">API</abbr> <abbr title="REpresentational State Transfer">RESTful</abbr>.</p>
-          <p>Je ne suis pas à l'écoute d'opportunités professionnelles, je suis très bien où je suis. Néanmoins, si vous êtes une association/un particulier et que vous souhaitez monter un projet, n'hésitez pas à me contacter ! (-;</p>
-        </div>
-      </div>
-      <span class="pull-right">*développeur</span>
-    </div>
+  <header id="header" class="container">
+    <h1>
+      <a href="/">fnev.eu</a>
+    </h1>
   </header>
 
+  <section id="content" class="container">
+    <h2>astronaute back-end, amoureux des APIs et de l'Espace.</h2>
+    <div class="row">
+      <div class="col-md-8">
+        <p>
+          Yo ! Je suis Florian Neveu, développeur back-end vivant à Paris, en France.
+          Je suis diplomé d'un bachelor "<a href="https://www.hetic.net/formations/bachelor-web">Chef de projet multimédia</a>" de l'<abbr title="Hautes Études des Technologies de l'Information et de la Communication">HÉTIC</abbr>, mais je continue de me former sur divers sujets.
+        </p>
+        <p>
+          Je travaille actuellement chez <a href="https://www.wiztopic.com">Wiztopic</a> en tant que développeur back-end.
+          Je m'y occupe notamment de la conception et du développement de son API, ainsi que l'utilisation et l'intégration de plusieurs autres web-services.
+        </p>
+      </div>
+    </div>
   <footer>
     <p>
       &copy; <?php echo date('Y'); ?> - Florian Neveu - Tous droits réservés.<br>
-      Site créé <a href="https://github.com/fnev-eu/fnev.eu">par mes mains</a> avec <span class="c-title">&hearts;</span>.
+      Site codé <a href="https://github.com/fnev-eu/fnev.eu">par mes mains</a> avec <span class="c-title">&hearts;</span>.
     </p>
   </footer>
 
