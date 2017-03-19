@@ -16,10 +16,6 @@ html, body {
 a {
     @include kepler-caption;
     color: inherit;
-    
-    &:hover {
-        
-    }
 }
 
 #content {
