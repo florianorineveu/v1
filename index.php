@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>fnev.eu - Astronaute back-end @Wiztopic - Paris</title>
-  <meta name="description" content="Florian Neveu, développeur web adepte de PHP, Symfony, et de la conception d'API RESTful.">
-  <meta name="keyword" content="Florian Neveu, fnev.eu, développeur, web, api, wiztopic">
+  <meta name="description" content="Florian Neveu, développeur web adepte de PHP, Symfony, de la conception d'API RESTful et de l'Espace'">
+  <meta name="keyword" content="Florian Neveu, fnev.eu, développeur, web, api, rest, wiztopic">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="stylesheets/screen.css" media="screen, projection" type="text/css">
@@ -45,7 +45,7 @@
   <footer>
     <p>
       &copy; <?php echo date('Y'); ?> - Florian Neveu - Tous droits réservés.<br>
-      Site créé <a href="https://github.com/fnev-eu/fnev.eu">par mes mains</a> avec <span class="c-title">&hearts;</span>.
+      Site codé <a href="https://github.com/fnev-eu/fnev.eu">par mes mains</a> avec <span class="c-title">&hearts;</span>.
     </p>
   </footer>
 
