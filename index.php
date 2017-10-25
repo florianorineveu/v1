@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>fnev.eu - Astronaute back-end @Wiztopic - Paris</title>
+  <title>fnev.eu - Astronaute back-end @NewDeal - Paris</title>
   <meta name="description" content="Florian Neveu, développeur web adepte de PHP, Symfony, de la conception d'API RESTful et de l'Espace'">
-  <meta name="keyword" content="Florian Neveu, fnev.eu, développeur, web, api, rest, wiztopic">
+  <meta name="keyword" content="Florian Neveu, fnev.eu, développeur, web, api, rest, wiztopic, newdeal">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="stylesheets/screen.css" media="screen, projection" type="text/css">
@@ -37,8 +37,8 @@
           Je suis diplomé d'un bachelor "<a href="https://www.hetic.net/formations/bachelor-web">Chef de projet multimédia</a>" de l'<abbr title="Hautes Études des Technologies de l'Information et de la Communication">HÉTIC</abbr>, mais je continue de me former sur divers sujets.
         </p>
         <p>
-          Je travaille actuellement chez <a href="https://www.wiztopic.com">Wiztopic</a> en tant que développeur back-end.
-          Je m'y occupe notamment de la conception et du développement de son API, ainsi que l'utilisation et l'intégration de plusieurs autres web-services.
+          Je travaille actuellement chez <a href="http://newdeal.io">NewDeal</a> en tant que développeur back-end.
+          <?php /*Je m'y occupe notamment de la conception et du développement de son API, ainsi que l'utilisation et l'intégration de plusieurs autres web-services.*/ ?>
         </p>
       </div>
     </div>
