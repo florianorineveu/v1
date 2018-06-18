@@ -7,7 +7,7 @@
 
   <title>fnev.eu - Astronaute back-end @NewDeal - Paris</title>
   <meta name="description" content="Florian Neveu, développeur web adepte de PHP, Symfony, de la conception d'API RESTful et de l'Espace'">
-  <meta name="keyword" content="Florian Neveu, fnev.eu, développeur, web, api, rest, wiztopic, newdeal">
+  <meta name="keyword" content="Florian Neveu, fnev.eu, développeur, web, api, rest, wiztopic, newdeal, new deal">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="stylesheets/screen.css" media="screen, projection" type="text/css">
