@@ -1,4 +1,21 @@
-### Linux template
+###> symfony/framework-bundle ###
+/.env.local
+/.env.*.local
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###
+
+###> Linux template ###
 *~
 
 # KDE directory preferences
@@ -6,8 +23,9 @@
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
+###< Linux template ###
 
-### OSX template
+###> OSX template ###
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -32,8 +50,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+###< OSX template ###
 
-### Windows template
+###> Windows template ###
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -52,8 +71,9 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+###< Windows template ###
 
-### SublimeText template
+###> SublimeText template ###
 # cache files for sublime text
 *.tmlanguage.cache
 *.tmPreferences.cache
@@ -71,15 +91,17 @@ sftp-config.json
 
 # phpintel cache
 .phpintel
+###< SublimeText template ###
 
-### Vim template
+###> Vim template ###
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 *.un~
 Session.vim
 .netrwhist
 *~
+###< Vim template ###
 
-### Sass template
-.sass-cache/
-*.css.map
+###> JetBrains ###
+.idea
+###< JetBrains ###
