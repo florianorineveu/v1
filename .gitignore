@@ -83,3 +83,6 @@ Session.vim
 ### Sass template
 .sass-cache/
 *.css.map
+
+
+.idea/
