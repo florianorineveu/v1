@@ -92,6 +92,9 @@
     "nikic/php-parser": {
         "version": "v4.1.0"
     },
+    "ocramius/package-versions": {
+        "version": "1.4.0"
+    },
     "ocramius/proxy-manager": {
         "version": "2.1.1"
     },
@@ -151,6 +154,9 @@
             "version": "3.3",
             "ref": "f3a28efb32f20b8740fd763651cabd780bce43da"
         }
+    },
+    "symfony/contracts": {
+        "version": "v1.0.2"
     },
     "symfony/css-selector": {
         "version": "v4.1.7"
@@ -269,6 +275,9 @@
     "symfony/polyfill-intl-icu": {
         "version": "v1.10.0"
     },
+    "symfony/polyfill-intl-idn": {
+        "version": "v1.11.0"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"
     },
@@ -307,6 +316,18 @@
             "version": "3.3",
             "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
         }
+    },
+    "symfony/security-core": {
+        "version": "v4.2.8"
+    },
+    "symfony/security-csrf": {
+        "version": "v4.2.8"
+    },
+    "symfony/security-guard": {
+        "version": "v4.2.8"
+    },
+    "symfony/security-http": {
+        "version": "v4.2.8"
     },
     "symfony/serializer": {
         "version": "v4.1.7"
@@ -361,6 +382,9 @@
     },
     "symfony/var-dumper": {
         "version": "v4.1.7"
+    },
+    "symfony/var-exporter": {
+        "version": "v4.2.8"
     },
     "symfony/web-link": {
         "version": "v4.1.7"
