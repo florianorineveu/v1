@@ -1,0 +1,28 @@
+@import "libs/fonts";
+
+@import "sections/header";
+@import "sections/footer";
+
+html, body {
+    @include kepler-display;
+    background: #F4F5EF;
+    color: $corpus;
+    font-size: 18px;
+}
+
+a {
+    @include kepler-caption;
+    color: inherit;
+}
+
+#content {
+    h2 {
+        @include kepler-caption;
+        font-size: 3rem;
+    }
+
+    p {
+        line-height: 1.6em;
+        margin: 1.8em 0;
+    }
+}

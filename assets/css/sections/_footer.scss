@@ -1,0 +1,38 @@
+footer {
+    color: $soft;
+    padding: 15px 0;
+    p {
+        font-weight: 500;
+        font-size: 0.8em;
+        line-height: 1.2em;
+        text-align: center;
+
+        span {
+            color: $corpus;
+            display: inline-block;
+            animation: heartbeat 1s infinite;
+        }
+    }
+}
+
+@keyframes heartbeat
+{
+    0% {
+        transform: scale( 1 );
+    }
+    20% {
+        transform: scale( 1.25 );
+    }
+    40% {
+        transform: scale( 1 );
+    }
+    60% {
+        transform: scale( 1.25 );
+    }
+    80% {
+        transform: scale( 1 );
+    }
+    100% {
+        transform: scale( 1 );
+    }
+}
