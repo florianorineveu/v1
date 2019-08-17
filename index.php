@@ -54,13 +54,29 @@
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script>	
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){	
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),	
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)	
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');	
-     ga('create', 'UA-43645597-2', 'auto');	
-    ga('send', 'pageview');	
+  <script src="tarteaucitron/tarteaucitron.js"></script>
+    <script>
+      tarteaucitron.init({
+          "privacyUrl": "",
+          "hashtag": "#tarteaucitron",
+          "cookieName": "tarteaucitron",
+          "orientation": "bottom",
+          "showAlertSmall": true,
+          "cookieslist": true,
+          "adblocker": false,
+          "AcceptAllCta" : true,
+          "highPrivacy": false,
+          "handleBrowserDNTRequest": false,
+          "removeCredit": true,
+          "moreInfoLink": true,
+          "useExternalCss": false,
+          "readmoreLink": "/cookiespolicy"
+      });
+    </script>
+   <script>
+    tarteaucitron.user.gtagUa = 'UA-43645597-2';
+    tarteaucitron.user.gtagMore = function () { };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
   </script>
 </body>
 </html>
