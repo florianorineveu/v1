@@ -8,7 +8,8 @@
         "symfony/translation": "^4.3",
         "symfony/validator": "^4.3",
         "symfony/form": "^4.3",
-        "symfony/monolog-bundle": "^3.4"
+        "symfony/monolog-bundle": "^3.4",
+        "symfony/security-bundle": "^4.3"
     },
     "conflict": {
         "symfony/symfony": "*"

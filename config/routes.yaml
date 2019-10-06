@@ -1,3 +1,8 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+front_controllers:
+    resource: ../src/Controller/Front/
+    type: annotation
+
+back_controllers:
+    resource: ../src/Controller/Back/
+    type: annotation
+    prefix: /io/
