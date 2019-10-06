@@ -1,0 +1,5 @@
+{{ form(form) }}
+
+{% if shorten_url.shortenUrl %}
+    <h1>{{ app.request.getSchemeAndHttpHost() ~ app.request.getBaseUrl ~ app.request.getPathInfo ~ shorten_url.shortenUrl }}</h1>
+{% endif %}
