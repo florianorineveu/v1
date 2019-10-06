@@ -15,6 +15,5 @@ class DefaultController extends AbstractController
     public function index()
     {
         return $this->redirectToRoute('home');
-        return $this->render('front/legacy.html.twig', []);
     }
 }

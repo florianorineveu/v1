@@ -3,9 +3,7 @@ security:
         App\Entity\User:
             algorithm: auto
 
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:
             entity:
                 class: App\Entity\User
@@ -23,7 +21,7 @@ security:
                     - App\Security\LoginFormAuthenticator
             remember_me:
                 secret:   '%kernel.secret%'
-                lifetime: 604800 # 1 week in seconds
+                lifetime: 604800
                 path:     /
 
     role_hierarchy:
