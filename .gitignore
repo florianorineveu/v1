@@ -1,3 +1,5 @@
+.idea/
+
 ### Linux template
 *~
 
@@ -83,3 +85,12 @@ Session.vim
 ### Sass template
 .sass-cache/
 *.css.map
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
