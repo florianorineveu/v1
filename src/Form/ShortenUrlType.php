@@ -23,14 +23,17 @@ class ShortenUrlType extends AbstractType
                 ->add('enabled'/*, ChoiceType::class, [
                     'required' => false,
                 ]*/)
+                ->add('save', SubmitType::class)
             ;
         }
 
         $builder
             ->add('url', UrlType::class, [
                 'required' => true,
+                'attr' => [
+                    'placeholder' => 'URL à raccourcir',
+                ],
             ])
-            ->add('save', SubmitType::class)
         ;
     }
 
