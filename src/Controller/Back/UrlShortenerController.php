@@ -30,6 +30,7 @@ class UrlShortenerController extends AbstractController
 
         if ($form->handleRequest($request)->isSubmitted() && $form->isValid()) {
             $urlShortenerManager->generateShortenUrl($shortenUrl);
+            $shortenUrl->setCreatedBy($this->getUser());
 
             $em->persist($shortenUrl);
             $em->flush();
