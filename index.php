@@ -54,29 +54,5 @@
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="tarteaucitron/tarteaucitron.js"></script>
-    <script>
-      tarteaucitron.init({
-          "privacyUrl": "",
-          "hashtag": "#tarteaucitron",
-          "cookieName": "tarteaucitron",
-          "orientation": "bottom",
-          "showAlertSmall": true,
-          "cookieslist": true,
-          "adblocker": false,
-          "AcceptAllCta" : true,
-          "highPrivacy": false,
-          "handleBrowserDNTRequest": false,
-          "removeCredit": true,
-          "moreInfoLink": true,
-          "useExternalCss": false,
-          "readmoreLink": "/cookiespolicy"
-      });
-    </script>
-   <script>
-    tarteaucitron.user.gtagUa = 'UA-43645597-2';
-    tarteaucitron.user.gtagMore = function () { };
-    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-  </script>
 </body>
 </html>
