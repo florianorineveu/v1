@@ -1,37 +1,56 @@
-{% extends 'base.html.twig' %}
+{% extends 'back/base.html.twig' %}
 
 {% block body %}
-    {{ form(form) }}
+    <div class="container">
+        <form action="{{ path('back_url_shortener_index') }}" method="post">
+            {{ form_row(form.url) }}
 
-    <table>
-        <thead>
-            <tr>
-                <th>Nom/alias</th>
-                <th>URL</th>
-                <th>Activé</th>
-                <th>Visité</th>
-                <th>Créé par</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for shorten_url in shorten_urls %}
-                <tr>
-                    <td>{{ shorten_url.name ? shorten_url.name ~ ' (' ~ shorten_url.shortenUrl ~ ')' : shorten_url.shortenUrl }}</td>
-                    <td><a href="{{ shorten_url.url }}" target="_blank">
-                            {{ shorten_url.url }}
-                        </a></td>
-                    <td>{{ shorten_url.enabled ? 'Oui' : 'Non' }}</td>
-                    <td>{{ shorten_url.used }}</td>
-                    <td>{{ shorten_url.createdBy ? shorten_url.createdBy.username : '--' }}</td>
-                    <td>
-                        <a href="{{ path('back_url_shortener_toggle', {'shortenUrlId': shorten_url.id}) }}">
-                            {{ shorten_url.enabled ? 'Désactiver' : 'Activer' }}
-                        </a>
-                        <a href="{{ path('back_url_shortener_remove', {'shortenUrlId': shorten_url.id}) }}">Supprimer</a>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(form.name) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(form.enabled) }}
+                </div>
+            </div>
+
+            {{ form_row(form._token) }}
+
+            <input type="submit" class="btn btn-primary" value="Raccourcir">
+        </form>
+
+        <div class="table-responsive">
+            <table class="table table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th>Nom/alias</th>
+                        <th>URL</th>
+                        <th>Activé</th>
+                        <th>Visité</th>
+                        <th>Créé par</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for shorten_url in shorten_urls %}
+                        <tr>
+                            <td>{{ shorten_url.name ? shorten_url.name ~ ' (' ~ shorten_url.shortenUrl ~ ')' : shorten_url.shortenUrl }}</td>
+                            <td><a href="{{ shorten_url.url }}" target="_blank">
+                                    {{ shorten_url.url }}
+                                </a></td>
+                            <td>{{ shorten_url.enabled ? 'Oui' : 'Non' }}</td>
+                            <td>{{ shorten_url.used }}</td>
+                            <td>{{ shorten_url.createdBy ? shorten_url.createdBy.username : '--' }}</td>
+                            <td class="text-right">
+                                <a href="{{ path('back_url_shortener_toggle', {'shortenUrlId': shorten_url.id}) }}" class="btn btn-primary btn-sm">
+                                    {{ shorten_url.enabled ? 'Désactiver' : 'Activer' }}
+                                </a>
+                                <a href="{{ path('back_url_shortener_remove', {'shortenUrlId': shorten_url.id}) }}" class="btn btn-danger btn-sm">Supprimer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock body %}
