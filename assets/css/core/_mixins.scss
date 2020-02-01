@@ -9,6 +9,12 @@
   font-weight: 400;
 }
 
+@mixin keplerCaptionB() {
+  font-family: $keplerCaption;
+  font-style: normal;
+  font-weight: 700;
+}
+
 @mixin kepler() {
   font-family: $kepler;
   font-style: normal;

@@ -1,1 +1,70 @@
-Uses.
+{% extends 'front/base.html.twig' %}
+
+{% block title -%}
+    {{ parent() ~ 'Uses' }}
+{%- endblock title %}
+
+{% block headerClasses -%}
+    {{ parent() ~ ' header-uses' }}
+{%- endblock headerClasses %}
+
+{% block body %}
+    <h1 class="h1">Uses</h1>
+
+    <h2 class="h2">Qu'est-ce qu'une page "Uses" ?</h2>
+    <p>
+        Les pages "Uses" sont inspirées de <a href="https://uses.tech/" rel="nofollow" target="_blank">uses.tech</a>
+        pour permettre aux développeurs notamment de partager leurs environnements de travail et habitudes. Cela permet
+        de s'inspirer et parfois de découvrir de nouveaux outils !
+    </p>
+
+    <h2 class="h2">Matériel</h2>
+    <p>
+        N'étant plus un grand fan d’Apple et surtout de MacOS depuis quelques années, mon ordinateur principal pour le
+        développement est un MacBook Pro 13” début 2015 même si je migre petit à petit vers Linux avec la distribution
+        <a href="https://manjaro.org/" target="_blank" rel="nofollow">Manjaro</a> sur mon PC fixe, en dual boot avec
+        Windows pour le loisir.
+    </p>
+    <p>
+        J'ai également un écran supplémentaire, un
+        <a href="https://www.asus.com/fr/ROG-Republic-Of-Gamers/ROG-SWIFT-PG348Q/specifications/" target="_blank" rel="nofollow">ASUS ROG PG348Q</a>
+        qui part sa qualité et ses dimensions m'apporte un confort indéniable.
+
+    </p>
+
+    <h2 class="h2">Éditeur de code</h2>
+    <p>
+        Mon principal éditeur de code est
+        <a href="https://www.jetbrains.com/phpstorm/" target="_blank" rel="nofollow">Jetbrains PHPStorm</a> avec le
+        thème par défaut “Darcula” et quelques plugins facilitant le support de Symfony.
+    </p>
+
+    <p>
+        Pour des éditions rapides ou lorsque la batterie doit être privilégia j’utilise plutôt Visual Studio Code ou Vi
+        (terminal FTW). Vous pouvez d'ailleurs trouver
+        <a href="https://github.com/fnev-eu/VSCode-config" target="_blank">ma configuration de VSCode sur Github</a>.
+    </p>
+
+    <h2 class="h2">Terminal</h2>
+    <p>
+        J’utilise actuellement <a href="https://www.iterm2.com/" target="_blank" rel="nofollow">iTerm2</a> qui reste
+        selon moi le meilleur terminal disponible sur MacOS. J’utilise également Zsh avec
+        <a href="https://github.com/fnev-eu/dotfiles/" target="_blank">ma propre configuration</a> (sans Oh My Zsh donc), installable facilement grâce à un
+        script dédié.
+    </p>
+
+    <h2 class="h2">Autres applications</h2>
+    <ul class="list-uses">
+        <li>Alfred (avec Powerpack)</li>
+        <li>Sequel Pro</li>
+        <li>Vagrant (via Parallels)</li>
+        <li>KeepassXC</li>
+        <li>Nextcloud</li>
+        <li>Paw</li>
+        <li>Slack</li>
+        <li>Sketch</li>
+        <li>Suite Adobe Creative</li>
+        <li>Invision</li>
+        <li>Firefox</li>
+    </ul>
+{% endblock body %}

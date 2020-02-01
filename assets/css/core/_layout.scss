@@ -1,5 +1,3 @@
-//composer require knplabs/github-api php-http/guzzle6-adapter "^1.1"
-
 .left {
   text-align: left;
 }
@@ -14,8 +12,25 @@
 
 .flex {
   display: flex;
+  flex-wrap: wrap;
 
   > .left, > .right {
     flex: 1;
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: initial;
+
+    > .left, > .right {
+      flex: initial;
+      text-align: center;
+    }
+  }
+}
+
+.content {
+  @media screen and (max-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }

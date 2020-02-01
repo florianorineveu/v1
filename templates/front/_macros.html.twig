@@ -1,0 +1,9 @@
+{% macro is_active(routes) -%}
+    {% if routes is iterable -%}
+        {% for route in routes -%}
+            {% if app.request.attributes.get('_route') == route %}active{% endif %}
+        {%- endfor %}
+    {%- else -%}
+        {% if app.request.attributes.get('_route') == routes %}active{% endif %}
+    {%- endif %}
+{%- endmacro %}
