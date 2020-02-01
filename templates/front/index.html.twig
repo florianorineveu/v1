@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('main') }}
+    {% endblock stylesheets %}
+</head>
+
+<body>
+    <div id="mainContent" class="content">
+        <header>
+            <a href="#" class="logo">Alnilam</a>
+            <h1 class="h1 typewriter">Alnilam initialisée.</h1>
+        </header>
+
+        <p>
+            Bienvenue sur <a href="#">Alnilam</a>, portfolio et "vitrine public" de <strong><a href="#">Florian Neveu</a></strong>. Alnilam a vu le jour le 31 janvier 2020 à
+            18:42, soit il y a {{ birthday_count_days }} jours. Vous y trouverez projets en cours ou passé, tentatives
+            d'articles ou encore des sortes d'études de cas sur des travaux qui me tiennent à coeur.
+        </p>
+
+        {#<div class="dual-col">
+            <a href="#" class="btn">
+                Mettre à disposition des vidéos tout en les protégeant le plus possible du téléchargement direct.
+                <span>Studio de production Carré Rose Films</span>
+            </a>
+
+            <a href="#" class="btn">
+                Faciliter l'intégration de web-services à l'iade d'un connecteur universel
+                <span>Wiztopic</span>
+            </a>
+        </div>#}
+    </div><!-- !#mainContent.content -->
+
+    <footer id="mainFooter" class="content alnilam-footer flex">
+        <div class="left">
+            <p>Site réalisé <a href="#">par mes mains</a> avec <a href="#">Symfony</a>.</p>
+            <a href="#">Page aléatoire</a>
+        </div>
+        <ul class="list-inline center">
+            <li><a href="#" class="icon icon-github">Github</a></li>
+            <li><a href="#" class="icon icon-linkedin">LinkedIn</a></li>
+            <li><a href="#" class="icon icon-twitter">Twitter</a></li>
+            <li><a href="#" class="icon icon-webring">Webring</a></li>
+        </ul>
+
+        <div class="right">
+            &copy; {{ 'now'|date('Y') }} - <a href="#">Florian Neveu</a>
+        </div>
+    </footer><!-- !#mainFooter.alnilam-footer -->
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('main') }}
+    {% endblock javascripts %}
+</body>
+</html>
