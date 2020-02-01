@@ -1,0 +1,8 @@
+.h1 {
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+
+  @include font-size(4);
+  @include keplerCaption;
+  letter-spacing: .2rem;
+}
