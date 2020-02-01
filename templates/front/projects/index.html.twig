@@ -1,0 +1,48 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title -%}
+    {{ parent() ~ 'Projets' }}
+{%- endblock title %}
+
+{% block headerClasses -%}
+    header header-dark header-home content
+{%- endblock headerClasses %}
+
+{% block header %}
+    <a href="{{ path('home') }}" class="logo">Alnilam</a>
+{% endblock header %}
+
+{% block body %}
+    <h1 class="h1">Différents projets sur lesquels j'ai travaillé.</h1>
+
+    <div class="flex projects-list">
+        <article>
+            <a href="{{ path('project', {'slug': 'alnilam'}) }}">Alnilam</a>
+            <span>Plateforme web personnelle</span>
+        </article>
+        <article>
+            <a href="{{ path('project', {'slug': 'le-tag-parfait'}) }}">Le Tag Parfait</a>
+            <span>Magazine spécialisé en ligne</span>
+        </article>
+        <article>
+            <a href="{{ path('project', {'slug': 'newdeal'}) }}">NewDeal</a>
+            <span>Solution SASS de gestion RH et paie</span>
+        </article>
+        <article>
+            <a href="{{ path('project', {'slug': 'athena'}) }}">Athena</a>
+            <span>Bot Discord en nodeJS</span>
+        </article>
+        {#<article>
+            <a href="{{ path('project', {'slug': 'athena'}) }}">Generateur.PW</a>
+            <span>Générateur de mot de passe</span>
+        </article>#}
+        {#<article>
+            <a href="{{ path('project', {'slug': 'athena'}) }}">Carré Rose Films</a>
+            <span>Magazine spécialisé en ligne</span>
+        </article>#}
+        {#<article>
+            <a href="{{ path('project', {'slug': 'athena'}) }}">dotfiles</a>
+            <span>Magazine spécialisé en ligne</span>
+        </article>#}
+    </div>
+{% endblock body %}

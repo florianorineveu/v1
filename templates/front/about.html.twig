@@ -1,1 +1,42 @@
-About.
+{% extends 'front/base.html.twig' %}
+
+{% block title -%}
+    {{ parent() ~ 'Florian' }}
+{%- endblock title %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block headerClasses -%}
+    {{ parent() ~ ' header-florian' }}
+{%- endblock headerClasses %}
+
+{% block body %}
+    <h1 class="h1">Florian Neveu, astronaute back-end</h1>
+
+    <p>
+        Je suis Florian un développeur web dans la région de Paris. Vous êtes sur mon site, un prétexte pour coder des
+        trucs ou pour refactor encore et encore, mais aussi pour éventuellement partager quelques trucs que j’ai appris,
+        expérimenté, qui me traîne dans la tête, ou encore <a href="{{ path('uses') }}">mon setup</a>...
+    </p>
+    <p>
+        Je suis actuellement en poste chez <a href="{{ path('project', {'slug': 'newdeal'}) }}">New Deal Technology</a>, start-up développant un outil SAAS pour simplifier la paie et la RH
+        au sein des entreprises. Je travaille également pour
+        <a href="{{ path('project', {'slug': 'le-tag-parfait'}) }}">Le Tag Parfait</a> en tant que bénévole pour tout ce
+        qui concerne la partie technique (développement / infrastructure / maintenance).
+    </p>
+    <p>
+        Je joue essentiellement avec PHP, à l’aide du framework Symfony, en essayant de ne pas trop m’éloigner de
+        l’intégration, petit plaisir que j’entretiens autant que possible. J’apprécie travailler pour des outils SAAS,
+        afin de contribuer sur un projet à long terme, le voir vivre et évoluer, et créer de nouvelles bases.
+    </p>
+    <p>
+        Je suis passionné par mon métier (j’ai de la chance), notamment par les APIs, mais aussi par l’espace,
+        la “porn culture” ou encore le jeu vidéo.
+    </p>
+    <p>
+        Si vous souhaitez me contacter et/ou me suivre vous pouvez me retrouver sur <a href="#">Github</a> ou encore <a href="#">Twitter</a>. Vous
+        pouvez aussi me contacter par e-mail à l’adresse <a href="#" class="js-mailto js-mail"></a> ou via le formulaire ci-dessous. Je lis tous les
+        messages mais je réponds lorsque le temps me le permet, donc peut-être faudra-t’il être patient !
+    </p>
+{% endblock body %}

@@ -1,0 +1,30 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title -%}
+    {{ parent() ~ 'Carré Rose Films' }}
+{%- endblock title %}
+
+{% block headerClasses -%}
+    {{ parent() ~ ' header-carre-rose-films' }}
+{%- endblock headerClasses %}
+
+{% block body %}
+    <h1 class="h1">Le Tag Parfait</h1>
+
+    <div class="flex">
+        <p class="muted left">
+            Stack : Wordpress, MySQL, jQuery, HTML, CSS
+        </p>
+        <p class="right muted">
+            Dernière activité : {{ last_activity|date('d/m/Y à H:i') }} -
+            Commits : {{ total_commits }}<br>
+            <a href="https://www.letagparfait.com" target="_blank">Site Internet</a>
+        </p>
+    </div>
+
+    <p>
+        M'amusant à stream sur Twitch de temps en temps, j'avais besoin d'un bot Discord pour permettre aux personnes
+        souhaitant me suivre de pouvoir accéder ou non à certains types de contenus sur le serveur de la chaine.
+        C'était aussi une opportunité amusante pour m'essayer à NodeJS via Discord.js.
+    </p>
+{% endblock body %}

@@ -2,8 +2,11 @@
 @import "core/mixins";
 @import "core/variables";
 @import "core/layout";
+@import "core/typo";
 
+@import "shared/header";
 @import "shared/footer";
+@import "shared/navigation";
 
 @import url("https://use.typekit.net/dya2brt.css");
 
@@ -13,7 +16,6 @@ html {
 
 body {
   background-color: $background;
-  padding: 2rem 0;
 
   @include kepler;
   color: $text;
@@ -42,7 +44,7 @@ a {
   font-weight: bold;
   text-decoration: none;
 
-  &:hover {
+  &:hover, &:focus {
     border-bottom-color: $text;
   }
 }
@@ -86,6 +88,8 @@ a {
   max-width: 100rem;
 
   p {
+    margin-bottom: 2rem;
+
     line-height: 1.5em;
   }
 }
@@ -144,5 +148,43 @@ a {
 
   &.icon-webring {
     background-image: url('../img/webring.svg');
+  }
+}
+
+.list-uses {
+  display: flex;
+  flex-wrap: wrap;
+
+  line-height: 1.5em;
+
+  > li {
+    margin: 0 0 1rem;
+    width: 20rem;
+  }
+}
+
+.img-container {
+  margin-bottom: 2rem;
+  text-align: center;
+
+  @include keplerI;
+  color: $muted;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.projects-list {
+  article {
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+    padding-right: 3rem;
+    width: 25rem;
+
+    span {
+      display: block;
+      margin-top: 1rem;
+    }
   }
 }

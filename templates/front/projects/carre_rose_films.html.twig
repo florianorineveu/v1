@@ -1,0 +1,24 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title -%}
+    {{ parent() ~ 'Carré Rose Films' }}
+{%- endblock title %}
+
+{% block headerClasses -%}
+    {{ parent() ~ ' header-carre-rose-films' }}
+{%- endblock headerClasses %}
+
+{% block body %}
+    <h1 class="h1">Carré Rose Films</h1>
+
+    <div class="flex">
+        <p class="muted left">
+            Stack : Symfony, MySQL, jQuery, HTML, CSS
+        </p>
+        <p class="right muted">
+            Dernière activité : {{ last_activity|date('d/m/Y à H:i') }} -
+            Commits : {{ total_commits }}<br>
+            <a href="https://carrerosefilms.com" target="_blank">Site Internet</a>
+        </p>
+    </div>
+{% endblock body %}
