@@ -4,6 +4,21 @@
     {{ parent() ~ 'Athena' }}
 {%- endblock title %}
 
+{% block meta -%}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alnilam ⊡ Athena" />
+    <meta name="twitter:description" content="Athena, un bot Discord de gestion de rôle avec NodeJS." />
+    <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/athena/athena.png') }}" />
+    <meta name="twitter:site" content="@fnev_eu" />
+    <meta name="twitter:domain" content="{{ app.request.host }}">
+
+    <meta property="og:title" content="Alnilam ⊡ Athena" />
+    <meta property="og:url" content="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}" />
+    <meta property="og:description" content="Athena, un bot Discord de gestion de rôle avec NodeJS." />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/athena/athena.png') }}" />
+{% endblock meta %}
+
 {% block headerClasses -%}
     {{ parent() ~ ' header-athena' }}
 {%- endblock headerClasses %}

@@ -4,6 +4,21 @@
     {{ parent() ~ 'Uses' }}
 {%- endblock title %}
 
+{% block meta %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alnilam ⊡ Uses" />
+    <meta name="twitter:description" content="Les outils que j'utilise au quotidien." />
+    <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/uses.jpg') }}" />
+    <meta name="twitter:site" content="@fnev_eu" />
+    <meta name="twitter:domain" content="{{ app.request.host }}">
+
+    <meta property="og:title" content="Alnilam ⊡ Uses" />
+    <meta property="og:url" content="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}" />
+    <meta property="og:description" content="Les outils que j'utilise au quotidien." />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/uses.jpg') }}" />
+{% endblock meta %}
+
 {% block headerClasses -%}
     {{ parent() ~ ' header-uses' }}
 {%- endblock headerClasses %}
@@ -49,8 +64,8 @@
     <p>
         J’utilise actuellement <a href="https://www.iterm2.com/" target="_blank" rel="nofollow">iTerm2</a> qui reste
         selon moi le meilleur terminal disponible sur MacOS. J’utilise également Zsh avec
-        <a href="https://github.com/fnev-eu/dotfiles/" target="_blank">ma propre configuration</a> (sans Oh My Zsh donc), installable facilement grâce à un
-        script dédié.
+        <a href="https://github.com/fnev-eu/dotfiles/" target="_blank">ma propre configuration</a> (sans Oh My Zsh donc),
+        installable facilement grâce à un script dédié.
     </p>
 
     <h2 class="h2">Autres applications</h2>

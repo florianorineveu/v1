@@ -1,15 +1,30 @@
 {% extends 'front/base.html.twig' %}
 
 {% block title -%}
-    {{ parent() ~ 'Carré Rose Films' }}
+    {{ parent() ~ 'Le Tag Parfait' }}
 {%- endblock title %}
 
+{% block meta -%}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alnilam ⊡ Le Tag Parfait" />
+    <meta name="twitter:description" content="Le Tag Parfait, le magazine de la culture porn." />
+    <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/le-tag-parfait/le-tag-parfait.png') }}" />
+    <meta name="twitter:site" content="@fnev_eu" />
+    <meta name="twitter:domain" content="{{ app.request.host }}">
+
+    <meta property="og:title" content="Alnilam ⊡ Le Tag Parfait" />
+    <meta property="og:url" content="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}" />
+    <meta property="og:description" content="Le Tag Parfait, le magazine de la culture porn." />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/le-tag-parfait/le-tag-parfait.png') }}" />
+{% endblock meta %}
+
 {% block headerClasses -%}
-    {{ parent() ~ ' header-carre-rose-films' }}
+    {{ parent() ~ ' header-le-tag-parfait' }}
 {%- endblock headerClasses %}
 
 {% block body %}
-    <h1 class="h1">Le Tag Parfait</h1>
+    <h1 class="h1">Le Tag Parfait : le magazine de la culture porn.</h1>
 
     <div class="flex">
         <p class="muted left">
@@ -22,9 +37,5 @@
         </p>
     </div>
 
-    <p>
-        M'amusant à stream sur Twitch de temps en temps, j'avais besoin d'un bot Discord pour permettre aux personnes
-        souhaitant me suivre de pouvoir accéder ou non à certains types de contenus sur le serveur de la chaine.
-        C'était aussi une opportunité amusante pour m'essayer à NodeJS via Discord.js.
-    </p>
+    <p>En cours de rédaction.</p>
 {% endblock body %}
