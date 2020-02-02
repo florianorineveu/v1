@@ -10,7 +10,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Alnilam" />
     <meta name="twitter:description" content="Alnilam, plate-forme web personnelle de Florian Neveu." />
-    <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/alnilam/alnilam.png') }}" />
+    <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/alnilam/alnilam.jpg') }}" />
     <meta name="twitter:site" content="@fnev_eu" />
     <meta name="twitter:domain" content="{{ app.request.host }}">
 
@@ -19,7 +19,7 @@
     <meta property="og:url" content="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}" />
     <meta property="og:description" content="Alnilam, plate-forme web personnelle de Florian Neveu." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/alnilam/alnilam.png') }}" />
+    <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/alnilam/alnilam.jpg') }}" />
 {% endblock meta %}
 
 {% block headerClasses -%}header header-home header-dark{%- endblock headerClasses %}
@@ -33,12 +33,31 @@
 
 {% block body %}
     <p>
-        Bienvenue sur <a href="{{ path('project', {'slug': 'alnilam'}) }}">Alnilam</a>, portfolio et "vitrine public"
+        Bienvenue sur <a href="{{ path('project', {'slug': 'alnilam'}) }}">Alnilam</a>, portfolio et "vitrine publique"
         de <a href="{{ path('about') }}">Florian Neveu</a>. Alnilam a vu le jour le 31 janvier 2020 à 18:42, soit il y
         a {{ birthday_count_days }} jours. Vous y trouverez <a href="{{ path('project_index') }}">projets</a> en
         cours ou passés, tentatives d'articles ou encore des sortes d'études de cas sur des travaux qui me tiennent
         à coeur.
     </p>
 
-    <p>Site encore en cours de rédaction.</p>
+    <h2 class="h2">Derniers projets :</h2>
+
+    <div class="list-home">
+        <article>
+            <a href="{{ path('project', {'slug': 'alnilam'}) }}">Alnilam</a>
+            <span>Plate-forme web personnelle</span>
+        </article>
+        <article>
+            <a href="{{ path('project', {'slug': 'le-tag-parfait'}) }}">Le Tag Parfait</a>
+            <span>Magazine spécialisé en ligne</span>
+        </article>
+        <article>
+            <a href="{{ path('project', {'slug': 'newdeal'}) }}">NewDeal</a>
+            <span>Solution SASS de gestion RH et paie</span>
+        </article>
+        <article>
+            <a href="{{ path('project', {'slug': 'athena'}) }}">Athena</a>
+            <span>Bot Discord en nodeJS</span>
+        </article>
+    </div>
 {% endblock body %}
