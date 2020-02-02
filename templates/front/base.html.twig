@@ -10,27 +10,7 @@
 
     <title>{% block title %}Alnilam ⊡ {% endblock title %}</title>
 
-    {% block meta %}
-        {#
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Alnilam ⊡ Florian" />
-        <meta name="twitter:description" content="Blabla descriptif" />
-        <meta name="twitter:image" content="{{ asset('build/images/florian-neveu.6f47165b.jpg') }}" />
-        <meta name="twitter:site" content="@fnev_eu" />
-        <meta name="twitter:domain" content="{{ app.request.host }}">
-
-        <meta property="fb:app_id" content="289262524504825" />
-        <meta property="og:site_name" content="Le Tag Parfait : le magazine de la culture porn" />
-        <meta property="og:title" content="Le Tag Parfait : le magazine de la culture porn" />
-        <meta property="og:url" content="https://www.letagparfait.com/fr/" />
-        <meta property="og:description" content="Le premier magazine français sur la culture porno" />
-        <meta property="og:type" content="website" />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="https://www.letagparfait.com/choses/letagparfait_512x512.png" />
-        <meta property="og:image:width" content="630" />
-        <meta property="og:image:height" content="315" />
-        #}
-    {% endblock meta %}
+    {% block meta -%}{%- endblock meta %}
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('main') }}

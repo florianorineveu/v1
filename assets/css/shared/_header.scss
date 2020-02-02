@@ -45,26 +45,33 @@
   &.header-with-bg {
     height: calc(100vh - 25rem);
 
-    .logo {
-      bottom: 1rem;
-      left: 1rem;
-      position: absolute;
-
-      background-image: url('../../img/logo-light.png');
-    }
-
     &.header-florian {
-      background: url('../../img/florian-neveu.jpg') top 15% center no-repeat;
+      background: url('/images/florian-neveu.jpg') top 15% center no-repeat;
       background-size: cover;
     }
 
     &.header-uses {
-      background: url('../../img/uses.jpg') top 15% center no-repeat;
+      background: url('/images/uses.jpg') top 15% center no-repeat;
       background-size: cover;
     }
+
     &.header-athena {
-      background: url('../../img/athena.png') center no-repeat;
+      background: url('/images/projets/athena/athena.png') center no-repeat;
       background-size: cover;
+    }
+
+    &.header-alnilam {
+      background: url('../../img/logo.png') center no-repeat;
+    }
+
+    &.header-newdeal {
+      background: url('/images/projets/newdeal/newdeal.jpg') center no-repeat;
+      background-size: cover;
+    }
+
+    &.header-le-tag-parfait {
+      background: #000000 url('/images/projets/le-tag-parfait/le-tag-parfait.png') center no-repeat;
+      background-size: contain;
     }
   }
 }
