@@ -2,15 +2,18 @@
     "require": {
         "symfony/flex": "^1.4",
         "sensio/framework-extra-bundle": "^5.4",
-        "symfony/asset": "^4.3",
+        "symfony/asset": "^4.4",
         "symfony/orm-pack": "^1.0",
-        "symfony/twig-bundle": "^4.3",
-        "symfony/translation": "^4.3",
-        "symfony/validator": "^4.3",
+        "symfony/twig-bundle": "^4.4",
+        "symfony/translation": "^4.4",
+        "symfony/validator": "^4.4",
         "symfony/form": "^4.3",
         "symfony/monolog-bundle": "^3.4",
-        "symfony/security-bundle": "^4.3",
-        "symfony/webpack-encore-bundle": "^1.6"
+        "symfony/security-bundle": "^4.4",
+        "symfony/webpack-encore-bundle": "^1.6",
+        "knplabs/github-api": "^2.12",
+        "php-http/guzzle6-adapter": "^1.1",
+        "symfony/dotenv": "^4.4"
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -22,11 +25,10 @@
         }
     },
     "require-dev": {
-        "symfony/dotenv": "^4.3",
         "symfony/maker-bundle": "^1.13",
         "symfony/profiler-pack": "^1.0",
-        "symfony/debug": "^4.3",
-        "symfony/debug-bundle": "^4.3",
+        "symfony/debug": "^4.4",
+        "symfony/debug-bundle": "^4.4",
         "symfony/debug-pack": "^1.0"
     },
     "autoload": {

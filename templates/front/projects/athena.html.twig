@@ -1,0 +1,81 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title -%}
+    {{ parent() ~ 'Athena' }}
+{%- endblock title %}
+
+{% block meta -%}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alnilam ⊡ Athena" />
+    <meta name="twitter:description" content="Athena, un bot Discord de gestion de rôle avec NodeJS." />
+    <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/athena/athena.png') }}" />
+    <meta name="twitter:site" content="@fnev_eu" />
+    <meta name="twitter:domain" content="{{ app.request.host }}">
+
+    <meta property="og:title" content="Alnilam ⊡ Athena" />
+    <meta property="og:url" content="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}" />
+    <meta property="og:description" content="Athena, un bot Discord de gestion de rôle avec NodeJS." />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/athena/athena.png') }}" />
+{% endblock meta %}
+
+{% block headerClasses -%}
+    {{ parent() ~ ' header-athena' }}
+{%- endblock headerClasses %}
+
+{% block body %}
+    <h1 class="h1">Athena, un bot Discord de gestion de rôle.</h1>
+
+    <div class="flex">
+        <p class="muted left">
+            Stack : nodeJS, Discord.js
+        </p>
+        <p class="right muted">
+            Dernière activité : {{ last_activity|date('d/m/Y à H:i') }} -
+            Commits : {{ total_commits }}<br>
+            <a href="https://github.com/fnev-eu/athena" target="_blank">Source</a>
+        </p>
+    </div>
+
+    <p>
+        M'amusant à stream sur Twitch de temps en temps, j'avais besoin d'un bot Discord pour permettre aux personnes
+        souhaitant me suivre de pouvoir accéder ou non à certains types de contenus sur le serveur de la chaine.
+        C'était aussi une opportunité amusante pour m'essayer à NodeJS via Discord.js.
+    </p>
+    <p>
+        Le bot réagit en réponse à des commandes préfixées comme <code>~help</code> ou <code>~roles</code>. Le préfix
+        peut-être également modifié via une commande dédiée.
+    </p>
+
+    <figure class="img-container">
+        <img src="{{ asset('images/projets/athena/commandes.png') }}" alt="Usage des commandes ~roles et ~join">
+        <figcaption>Athena est plutôt docile.</figcaption>
+    </figure>
+
+    <p>
+        Par les commandes <code>~join x</code> et <code>~leave x</code>, l'utilisateur à la possibilité d'obtenir des
+        rôles Discord qui lui permettront alors d'accéder à différents canaux relatifs au rôle choisi.
+    </p>
+
+    <p>
+        Je me suis également intéressé aux possibilités autour des réactions sur les messages. À partir de là est née
+        une "starboard". Pour chaque message où une réaction ⭐️ est déposé, Athena va alors citer ce
+        dernier sur un canal dédié, avec différentes informations, comme l'auteur, la date de publication ou le nombre
+        d'étoiles attribuées.
+    </p>
+    <figure class="img-container">
+        <img src="{{ asset('images/projets/athena/starboard.png') }}" alt="Un aperçu du canal #starboard">
+        <figcaption>Un aperçu du canal #starboard.</figcaption>
+    </figure>
+
+    <p>
+        Pour avoir un usage plus fun, et aussi parce que les couleurs de rôle sont souvent sujets à discussion pour les
+        utilisateurs soucieux de leur apparence, un système à été ajouté pour que les utilisateurs puissent choisir leur
+        propre couleur dans la liste des membres du serveur, en sélectionnant une réaction sur un message bien précis.
+        Ainsi, un rôle est alors assigné à l'utilisateur, ayant la couleur demandée.
+    </p>
+    <figure class="img-container">
+        <img src="{{ asset('images/projets/athena/couleurs.png') }}" alt="">
+        <figcaption>Fini les queurelles parce que le vert sied mal au teint des utilisateurs</figcaption>
+    </figure>
+{% endblock body %}

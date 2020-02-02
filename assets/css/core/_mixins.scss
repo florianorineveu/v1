@@ -1,0 +1,40 @@
+@mixin font-size($sizeValue: 1.8) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin keplerCaption() {
+  font-family: $keplerCaption;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin keplerCaptionB() {
+  font-family: $keplerCaption;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin kepler() {
+  font-family: $kepler;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin keplerI() {
+  font-family: $kepler;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@mixin keplerB() {
+  font-family: $kepler;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin keplerBI() {
+  font-family: $kepler;
+  font-style: italic;
+  font-weight: 700;
+}
