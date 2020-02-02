@@ -1,0 +1,30 @@
+.h1 {
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+
+  @include font-size(4);
+  @include keplerCaption;
+  letter-spacing: .2rem;
+}
+
+.h2 {
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+
+  @include font-size(2.5);
+  @include keplerCaptionB;
+  letter-spacing: .2rem;
+  line-height: 3rem;
+}
+
+code {
+  font-family: $monospace;
+  background: $code;
+  padding: .3rem;
+  border-radius: .5rem;
+  font-size: 1.4rem;
+}
+
+.muted {
+  color: $muted;
+}

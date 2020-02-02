@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Florian Neveu">
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}" />
+
+    <title>{% block title %}Alnilam ⊡ {% endblock title %}</title>
+
+    {% block meta -%}{%- endblock meta %}
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('main') }}
+    {% endblock stylesheets %}
+
+    {{ include('front/_favicon.html.twig') }}
+</head>
+
+<body>
+    <header id="mainHeader" class="{% block headerClasses %}header header-with-bg{% endblock headerClasses %}">
+        <a href="#mainContent" class="go-main-content">Aller au contenu</a>
+
+        {%- block header -%}
+        {%- endblock header -%}
+    </header>
+
+    {{ include('front/_navigation.html.twig') }}
+
+    <div id="mainContent" class="content">
+        {% block body %}
+        {% endblock body %}
+    </div><!-- !#mainContent.content -->
+    {{ include('front/_footer.html.twig') }}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('main') }}
+    {% endblock javascripts %}
+</body>
+</html>

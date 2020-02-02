@@ -1,0 +1,44 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title -%}
+    Alnilam
+{%- endblock title %}
+
+{% block meta -%}
+    <meta name="description" content="Alnilam, plate-forme web personnelle de Florian Neveu." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alnilam" />
+    <meta name="twitter:description" content="Alnilam, plate-forme web personnelle de Florian Neveu." />
+    <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/athena/athena.png') }}" />
+    <meta name="twitter:site" content="@fnev_eu" />
+    <meta name="twitter:domain" content="{{ app.request.host }}">
+
+    <meta property="og:site_name" content="Alnilam" />
+    <meta property="og:title" content="Alnilam ⊡ Athena" />
+    <meta property="og:url" content="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}" />
+    <meta property="og:description" content="Alnilam, plate-forme web personnelle de Florian Neveu." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/athena/athena.png') }}" />
+{% endblock meta %}
+
+{% block headerClasses -%}header header-home header-dark{%- endblock headerClasses %}
+
+{% block header %}
+    <div class="content">
+        <a href="{{ path('home') }}" class="logo">Alnilam</a>
+        <h1 class="h1 typewriter">Alnilam initialisée.</h1>
+    </div>
+{% endblock header %}
+
+{% block body %}
+    <p>
+        Bienvenue sur <a href="{{ path('project', {'slug': 'alnilam'}) }}">Alnilam</a>, portfolio et "vitrine public"
+        de <a href="{{ path('about') }}">Florian Neveu</a>. Alnilam a vu le jour le 31 janvier 2020 à 18:42, soit il y
+        a {{ birthday_count_days }} jours. Vous y trouverez <a href="{{ path('project_index') }}">projets</a> en
+        cours ou passés, tentatives d'articles ou encore des sortes d'études de cas sur des travaux qui me tiennent
+        à coeur.
+    </p>
+
+    <p>Site encore en cours de rédaction.</p>
+{% endblock body %}
