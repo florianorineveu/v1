@@ -38,12 +38,12 @@
     </div>
 
     <p>
-        M'amusant à stream sur Twitch de temps en temps, j'avais besoin d'un bot Discord pour permettre aux personnes
+        Streameur à mes heures perdues sur Twitch, j'avais besoin d'un bot Discord pour permettre aux personnes
         souhaitant me suivre de pouvoir accéder ou non à certains types de contenus sur le serveur de la chaine.
         C'était aussi une opportunité amusante pour m'essayer à NodeJS via Discord.js.
     </p>
     <p>
-        Le bot réagit en réponse à des commandes préfixées comme <code>~help</code> ou <code>~roles</code>. Le préfix
+        Le bot réagit en réponse à des commandes préfixées comme <code>~help</code> ou <code>~roles</code>. Le préfixe
         peut-être également modifié via une commande dédiée.
     </p>
 
@@ -53,15 +53,15 @@
     </figure>
 
     <p>
-        Par les commandes <code>~join x</code> et <code>~leave x</code>, l'utilisateur à la possibilité d'obtenir des
+        Par les commandes <code>~join x</code> et <code>~leave x</code>, l'utilisateur a la possibilité d'obtenir des
         rôles Discord qui lui permettront alors d'accéder à différents canaux relatifs au rôle choisi.
     </p>
 
     <p>
-        Je me suis également intéressé aux possibilités autour des réactions sur les messages. À partir de là est née
-        une "starboard". Pour chaque message où une réaction ⭐️ est déposé, Athena va alors citer ce
-        dernier sur un canal dédié, avec différentes informations, comme l'auteur, la date de publication ou le nombre
-        d'étoiles attribuées.
+        Sur les messages Discord, l'utilisateur peut déposer une réaction. Je me suis intéressé à cette fonctionnalité
+        et de cette exploration est née une “starboard”. Pour chaque message où une réaction ⭐️ est déposé, Athena va
+        alors citer ce dernier sur un canal dédié, avec différentes informations, comme l'auteur, la date de publication
+        ou le nombre d'étoiles attribuées.
     </p>
     <figure class="img-container">
         <img src="{{ asset('images/projets/athena/starboard.png') }}" alt="Un aperçu du canal #starboard">
@@ -69,13 +69,13 @@
     </figure>
 
     <p>
-        Pour avoir un usage plus fun, et aussi parce que les couleurs de rôle sont souvent sujets à discussion pour les
-        utilisateurs soucieux de leur apparence, un système à été ajouté pour que les utilisateurs puissent choisir leur
+        Pour un usage plus fun, et aussi parce que les couleurs de rôle sont souvent sujets à discussion pour les
+        utilisateurs soucieux de leur apparence, un système a été ajouté pour que les utilisateurs puissent choisir leur
         propre couleur dans la liste des membres du serveur, en sélectionnant une réaction sur un message bien précis.
         Ainsi, un rôle est alors assigné à l'utilisateur, ayant la couleur demandée.
     </p>
     <figure class="img-container">
         <img src="{{ asset('images/projets/athena/couleurs.png') }}" alt="">
-        <figcaption>Fini les queurelles parce que le vert sied mal au teint des utilisateurs</figcaption>
+        <figcaption>Fini les querelles parce que le vert sied mal au teint des utilisateurs</figcaption>
     </figure>
 {% endblock body %}
