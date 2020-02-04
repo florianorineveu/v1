@@ -5,18 +5,18 @@
 {%- endblock title %}
 
 {% block meta %}
-    <meta name="description" content="Florian Neveu, développeur web sur Paris en Ile-de-France. Je joue essentiellement avec PHP, à l’aide du framework Symfony.">
+    <meta name="description" content="Florian Neveu, développeur web dans la région de Paris. J’explore le monde dudéveloppement essentiellement avec PHP, à l’aide du framework Symfony.">
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Alnilam ⊡ Florian" />
-    <meta name="twitter:description" content="Florian Neveu, développeur web sur Paris en Ile-de-France. Je joue essentiellement avec PHP, à l’aide du framework Symfony." />
+    <meta name="twitter:description" content="Florian Neveu, développeur web dans la région de Paris. J’explore le monde dudéveloppement essentiellement avec PHP, à l’aide du framework Symfony." />
     <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/florian-neveu.jpg') }}" />
     <meta name="twitter:site" content="@fnev_eu" />
     <meta name="twitter:domain" content="{{ app.request.host }}">
 
     <meta property="og:title" content="Alnilam ⊡ Florian" />
     <meta property="og:url" content="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}" />
-    <meta property="og:description" content="Florian Neveu, développeur web sur Paris en Ile-de-France. Je joue essentiellement avec PHP, à l’aide du framework Symfony." />
+    <meta property="og:description" content="Florian Neveu, développeur web dans la région de Paris. J’explore le monde dudéveloppement essentiellement avec PHP, à l’aide du framework Symfony." />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/florian-neveu.jpg') }}" />
 {% endblock meta %}
@@ -29,31 +29,40 @@
     <h1 class="h1">Florian Neveu, astronaute back-end.</h1>
 
     <p>
-        Je suis un développeur web dans la région de Paris. Vous êtes sur mon site, un prétexte pour coder des trucs ou
-        pour refactor encore et encore, mais aussi pour éventuellement partager quelques trucs que j’ai appris,
-        expérimentés, qui me traînent dans la tête, ou encore <a href="{{ path('uses') }}">mon setup</a>...
+        Développeur web dans la région de Paris, je vous laisse découvrir ici l’univers dans lequel j’évolue. Plateforme
+        d’exploration, <a href="{{ path('project', {'slug': 'alnilam'}) }}">Alnilam</a> se présente comme un laboratoire
+        dans lequel je peux coder à ma guise et refactoriser à l’infini. Le partage étant, selon moi, une qualité
+        nécessaire du dévelopeur ainsi qu'une notion clé de l’expérimentation, vous pourrez également y trouver mes
+        tentatives, mes découvertes ou <a href="{{ path('uses') }}">mon setup</a>.
     </p>
     <p>
         Je suis actuellement en poste chez <a href="{{ path('project', {'slug': 'newdeal'}) }}">New Deal Technology</a>,
-        start-up développant un outil SAAS pour simplifier la paie et la RH au sein des entreprises. Je travaille
-        également pour <a href="{{ path('project', {'slug': 'le-tag-parfait'}) }}">Le Tag Parfait</a> en tant que bénévole
-        pour tout ce qui concerne la partie technique (développement / infrastructure / maintenance).
+        start-up développant un outil SAAS pour simplifier la paie et la RH au sein des entreprises. En parallèle, je
+        travaille également pour <a href="{{ path('project', {'slug': 'le-tag-parfait'}) }}">Le Tag Parfait</a> en tant que
+        bénévole et m’occupe de tout ce qui concerne la partie technique (développement/infrastructure/maintenance).
     </p>
     <p>
-        Je joue essentiellement avec PHP, à l’aide du framework Symfony, en essayant de ne pas trop m’éloigner de
-        l’intégration, petit plaisir que j’entretiens autant que possible. J’apprécie travailler pour des outils SAAS,
-        afin de contribuer sur un projet à long terme, le voir vivre et évoluer, et créer de nouvelles bases.
+        J’explore le monde du développement essentiellement avec PHP, à l’aide du framework Symfony. Jamais très loin
+        en orbite flotte l’intégration, petit plaisir que j’entretiens autant que possible. Travailler pour des
+        outils SAAS est une chose que j’apprécie car cela permet de contribuer à un projet sur le long terme et de le
+        voir évoluer.
     </p>
     <p>
-        Je suis passionné par mon métier (j’ai de la chance), mais aussi par l’espace, la "porn culture", les Lego ou
-        encore le jeu vidéo (Overwatch &hearts;). Je m'essaye de temps en temps en modèle photo pour le plaisir et pour
-        apporter une autre image de la "masculinité".
+        J’ai la chance d’être passionné par mon métier, mais je laisse aussi mon attention graviter autour de l’espace
+        et l’exploration spatiale, la « porn culture », les Lego, ou encore le jeu vidéo (principalement Overwatch que
+        j'aime de tout mon c&oelig;ur). Je troque parfois le costume d’astronaute back-end contre celui de modèle photo
+        pour le plaisir, et nourrir une réflexion différente sur l’image de la "masculinité". J'ai aussi un chat qui
+        s'appelle Lune.
     </p>
     <p>
-        Si vous souhaitez me contacter et/ou me suivre vous pouvez me retrouver sur
+        Si vous souhaitez me contacter ou me suivre vous pouvez me retrouver sur
         <a href="https://github.com/fnev-eu" target="_blank">Github</a> ou encore
-        <a href="https://twitter.com/fnev_eu" target="_blank">Twitter</a>. Vous pouvez aussi me contacter par e-mail à
-        l’adresse <a href="#" class="js-mailto js-mail"></a>. Je lis tous les messages mais je réponds lorsque le temps
-        me le permet, donc peut-être faudra-t’il être patient !
+        <a href="https://twitter.com/fnev_eu" target="_blank">Twitter</a>. Vous pouvez aussi me joindre par e-mail à
+        l’adresse <a href="#" class="js-mailto js-mail"></a>. Je lis tous les messages et vous répondrai presque aussi
+        vite que la vitesse de la lumière !
     </p>
+    <figure class="img-container">
+        <img src="{{ asset('images/satur-v-lego.jpg') }}" alt="">
+        <figcaption>Je vous avais dit que j'aimais l'astronomie et les Lego...</figcaption>
+    </figure>
 {% endblock body %}
