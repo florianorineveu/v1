@@ -18,23 +18,19 @@ class Github
         );
     }
 
-    public function getAllCommits($repository, $user = null, $sha = 'master')
+    public function getAllCommits($user, $repository, $sha = 'master')
     {
-        if (!$user) {
-            $user = getenv('GITHUB_USERNAME');
-        }
-
-        return $this->fetchCommits($repository, $user, $sha);
+        return $this->fetchCommits($user, $repository, $sha);
     }
 
-    private function fetchCommits($repository, $user, $sha)
+    private function fetchCommits($user, $repository, $sha)
     {
         $commits = $this->client->api('repo')->commits()->setPerPage(100)->all($user, $repository, array('sha' => $sha));
 
         if (array_key_exists(99, $commits)) {
             $lastCommit = $commits[99];
             unset($commits[99]);
-            $commits = array_merge($commits, $this->fetchCommits($repository, $user, $lastCommit['sha']));
+            $commits = array_merge($commits, $this->fetchCommits($user, $repository, $lastCommit['sha']));
         }
 
         return $commits;

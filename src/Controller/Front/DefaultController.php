@@ -2,6 +2,7 @@
 
 namespace App\Controller\Front;
 
+use App\Repository\ProjectRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -40,10 +41,13 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/random", name="random")
+     * @Route("/aleatoire", name="random")
      */
-    public function random(Request $request, RouterInterface $router)
-    {
+    public function random(
+        ProjectRepository $projectRepository,
+        Request $request,
+        RouterInterface $router
+    ) {
         $refererUrl   = $request->headers->get('referer');
         $referer      = parse_url($refererUrl, PHP_URL_PATH);
         $refererRoute = $router->match($referer)['_route'];
@@ -75,13 +79,12 @@ class DefaultController extends AbstractController
         }
 
         if ('project' === $destination) {
-            $availableProjects = [
-                'athena',
-                'alnilam',
-            ];
+            $availableProjects = $projectRepository->findBy([
+                'enabled' => true,
+            ]);
 
             return $this->redirectToRoute($destination, [
-                'slug' => $availableProjects[array_rand($availableProjects)]
+                'slug' => $availableProjects[array_rand($availableProjects)]->getSlug(),
             ]);
         }
 
