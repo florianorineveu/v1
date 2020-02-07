@@ -1,0 +1,79 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title -%}
+    {{ parent() ~ project.name }}
+{%- endblock title %}
+
+{% block meta -%}
+    {% if project.description %}
+        <meta name="description" content="{{ project.description }}" />
+    {% endif %}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alnilam ⊡ {{ project.name }}" />
+    {% if project.description %}
+        <meta name="twitter:description" content="{{ project.description }}" />
+    {% endif %}
+    {% if project.cover %}
+        <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset(project.cover) }}" />
+    {% endif %}
+    <meta name="twitter:site" content="@fnev_eu" />
+    <meta name="twitter:domain" content="{{ app.request.host }}">
+
+    <meta property="og:title" content="Alnilam ⊡ {{ project.name }}" />
+    <meta property="og:url" content="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}" />
+    {% if project.description %}
+        <meta property="og:description" content="{{ project.description }}" />
+    {% endif %}
+    <meta property="og:type" content="article" />
+    {% if project.cover %}
+        <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset(project.cover) }}" />
+    {% endif %}
+{% endblock meta %}
+
+{% block headerClasses -%}
+    {% if not project.cover %}
+        header
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{%- endblock headerClasses %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .header.header-with-bg {
+            background: url({{ asset(project.cover) }}) center no-repeat;
+            background-size: cover;
+        }
+    </style>
+{% endblock stylesheets %}
+
+{% block body %}
+    <h1 class="h1">{{ project.title }}</h1>
+
+    <div class="flex">
+        <p class="muted left">
+            Compétences : {{ project.stack }}<br>
+            Développeur fullstack dans une équipe de 6 personnes.
+        </p>
+        <p class="right muted">
+            {% if total_commits %}
+                Dernière activité : {{ last_activity|date('d/m/Y à H:i') }} -
+                Commits : {{ total_commits }}<br>
+            {% endif %}
+
+            {% if project.url %}
+                <a href="{{ project.url }}" target="_blank">Site Internet</a>
+            {% endif %}
+
+            {{ project.url and project.githubDisplayed and project.githubOwner and project.githubRepository ? '-' }}
+
+            {% if project.githubDisplayed and project.githubOwner and project.githubRepository %}
+                <a href="{{ 'https://github.com/' ~ project.githubOwner ~ '/' ~ project.githubRepository }}" target="_blank">Source (Github)</a>
+            {% endif %}
+        </p>
+    </div>
+
+    {{ project.content|raw }}
+{% endblock body %}

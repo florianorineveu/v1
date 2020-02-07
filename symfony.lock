@@ -1,4 +1,19 @@
 {
+    "antishov/doctrine-extensions-bundle": {
+        "version": "1.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.4",
+            "ref": "6c1ceb662f8997085f739cd089bfbef67f245983"
+        },
+        "files": [
+            "config/packages/stof_doctrine_extensions.yaml"
+        ]
+    },
+    "behat/transliterator": {
+        "version": "v1.3.0"
+    },
     "clue/stream-filter": {
         "version": "v1.4.1"
     },
@@ -90,6 +105,9 @@
             "config/packages/dev/easy_log_handler.yaml"
         ]
     },
+    "gedmo/doctrine-extensions": {
+        "version": "v2.4.39"
+    },
     "guzzlehttp/guzzle": {
         "version": "6.5.2"
     },
@@ -125,6 +143,9 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.2.3"
+    },
+    "php": {
+        "version": "7.3"
     },
     "php-http/cache-plugin": {
         "version": "1.7.0"
