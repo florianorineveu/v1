@@ -14,7 +14,7 @@ class Github
         $this->client->authenticate(
             getenv('GITHUB_SECRET'),
             null,
-            Client::AUTH_URL_TOKEN
+            Client::AUTH_HTTP_PASSWORD
         );
     }
 
