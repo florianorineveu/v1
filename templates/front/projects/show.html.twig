@@ -54,15 +54,21 @@
 
     <div class="flex">
         <p class="muted left">
-            Stack : {{ project.stack }}
+            Compétences : {{ project.stack }}<br>
+            Développeur fullstack dans une équipe de 6 personnes.
         </p>
         <p class="right muted">
-            Dernière activité : {{ last_activity|date('d/m/Y à H:i') }} -
-            Commits : {{ total_commits }}<br>
+            {% if total_commits %}
+                Dernière activité : {{ last_activity|date('d/m/Y à H:i') }} -
+                Commits : {{ total_commits }}<br>
+            {% endif %}
+
             {% if project.url %}
                 <a href="{{ project.url }}" target="_blank">Site Internet</a>
             {% endif %}
+
             {{ project.url and project.githubDisplayed and project.githubOwner and project.githubRepository ? '-' }}
+
             {% if project.githubDisplayed and project.githubOwner and project.githubRepository %}
                 <a href="{{ 'https://github.com/' ~ project.githubOwner ~ '/' ~ project.githubRepository }}" target="_blank">Source (Github)</a>
             {% endif %}

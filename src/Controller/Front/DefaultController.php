@@ -3,6 +3,7 @@
 namespace App\Controller\Front;
 
 use App\Repository\ProjectRepository;
+use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,14 +14,21 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index()
+    public function index(ProjectRepository $projectRepository)
     {
         $alnilamBirthday = new \DateTime('2020-01-31 18:42');
-        $now             = new \DateTime();
-        $dateDiff        = date_diff($alnilamBirthday, $now);
+        $dateDiff        = date_diff($alnilamBirthday, new \DateTime());
+
+        $lastProjects    = $projectRepository->findBy([
+            'enabled' => true,
+        ], [
+            'sort' => Criteria::ASC,
+            'name' => Criteria::ASC,
+        ], 5);
 
         return $this->render('front/index.html.twig', [
             'birthday_count_days' => $dateDiff->days,
+            'last_projects'       => $lastProjects
         ]);
     }
 
