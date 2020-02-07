@@ -42,21 +42,11 @@
     <h2 class="h2">Derniers projets :</h2>
 
     <div class="list-home">
-        <article>
-            <a href="{{ path('project', {'slug': 'alnilam'}) }}">Alnilam</a>
-            <span>Plate-forme web personnelle</span>
-        </article>
-        <article>
-            <a href="{{ path('project', {'slug': 'le-tag-parfait'}) }}">Le Tag Parfait</a>
-            <span>Magazine spécialisé en ligne</span>
-        </article>
-        <article>
-            <a href="{{ path('project', {'slug': 'newdeal'}) }}">NewDeal</a>
-            <span>Solution SASS de gestion RH et paie</span>
-        </article>
-        <article>
-            <a href="{{ path('project', {'slug': 'athena'}) }}">Athena</a>
-            <span>Bot Discord en nodeJS</span>
-        </article>
+        {% for project in last_projects %}
+            <article>
+                <a href="{{ path('project', {'slug': project.slug}) }}">{{ project.name }}</a>
+                <span>{{ project.shortDescription }}</span>
+            </article>
+        {% endfor %}
     </div>
 {% endblock body %}
