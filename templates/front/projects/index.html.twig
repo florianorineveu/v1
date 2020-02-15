@@ -13,7 +13,7 @@
 {% endblock header %}
 
 {% block body %}
-    <h1 class="h1">Différents projets sur lesquels j'ai travaillé.</h1>
+    <h1 class="h1">{{ 'projects.index.intro'|trans({}, 'front') }}</h1>
 
     <div class="flex projects-list">
         {% for project in projects %}
