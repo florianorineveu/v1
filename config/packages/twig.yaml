@@ -5,4 +5,3 @@ twig:
     strict_variables: '%kernel.debug%'
     globals:
         #front_helper: "@App\\Services\\FrontHelper"
-        google_tag_manager_id: '%env(GOOGLE_TAG_MANAGER_ID)%'

@@ -15,7 +15,7 @@
         <meta name="twitter:description" content="{{ project.description }}" />
     {% endif %}
     {% if project.cover %}
-        <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset(project.cover) }}" />
+        <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ vich_uploader_asset(project, 'coverFile') }}" />
     {% endif %}
     <meta name="twitter:site" content="@fnev_eu" />
     <meta name="twitter:domain" content="{{ app.request.host }}">
@@ -27,7 +27,7 @@
     {% endif %}
     <meta property="og:type" content="article" />
     {% if project.cover %}
-        <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset(project.cover) }}" />
+        <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ vich_uploader_asset(project, 'coverFile') }}" />
     {% endif %}
 {% endblock meta %}
 
@@ -43,7 +43,7 @@
     {{ parent() }}
     <style>
         .header.header-with-bg {
-            background: url({{ asset(project.cover) }}) center no-repeat;
+            background: url({{ vich_uploader_asset(project, 'coverFile') }}) center no-repeat;
             background-size: cover;
         }
     </style>
@@ -54,23 +54,30 @@
 
     <div class="flex">
         <p class="muted left">
-            Compétences : {{ project.stack }}<br>
-            Développeur fullstack dans une équipe de 6 personnes.
+            {% if project.stack %}
+                {{ 'projects.show.stack'|trans({}, 'front') ~ ' ' ~ project.stack }}<br>
+            {% endif %}
+
+            {{ project.team }}
         </p>
         <p class="right muted">
             {% if total_commits %}
-                Dernière activité : {{ last_activity|date('d/m/Y à H:i') }} -
-                Commits : {{ total_commits }}<br>
+                {{ 'projects.show.commits'|trans({}, 'front') ~ ' ' ~ total_commits }} -
+                {{ 'projects.show.last_activity'|trans({}, 'front') }} <abbr title="{{ last_activity|date('d/m/Y à H:i') }}">
+                {{ last_activity.timestamp }}
+            </abbr><br>
             {% endif %}
 
             {% if project.url %}
-                <a href="{{ project.url }}" target="_blank">Site Internet</a>
+                <a href="{{ project.url }}" target="_blank">{{ 'projects.show.website'|trans({}, 'front') }}</a>
             {% endif %}
 
             {{ project.url and project.githubDisplayed and project.githubOwner and project.githubRepository ? '-' }}
 
             {% if project.githubDisplayed and project.githubOwner and project.githubRepository %}
-                <a href="{{ 'https://github.com/' ~ project.githubOwner ~ '/' ~ project.githubRepository }}" target="_blank">Source (Github)</a>
+                <a href="{{ 'https://github.com/' ~ project.githubOwner ~ '/' ~ project.githubRepository }}" target="_blank">
+                    {{ 'projects.show.source'|trans({}, 'front') }}
+                </a>
             {% endif %}
         </p>
     </div>
