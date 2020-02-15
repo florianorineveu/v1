@@ -1,0 +1,12 @@
+projects:
+    index:
+        intro: "Différents projets sur lesquels j'ai travaillé."
+
+    show:
+        stack: "Compétences :"
+
+        commits: "Commits : "
+        last_activity: "Dernière activité : "
+
+        source: "Source (Github)"
+        website: "Site Internet"

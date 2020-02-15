@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>New Project</title>
+
+{% block body %}
+    <h1>Create new Project</h1>
+
+    {{ include('back/project/_form.html.twig') }}
+
+    <a href="{{ path('project_index') }}">back to list</a>
+{% endblock %}
