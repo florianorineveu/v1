@@ -4,10 +4,13 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProjectRepository")
  * @ORM\HasLifecycleCallbacks()
+ * @Vich\Uploadable
  */
 class Project
 {
@@ -29,7 +32,7 @@ class Project
     private $shortDescription;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $title;
 
@@ -50,7 +53,14 @@ class Project
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @Vich\UploadableField(mapping="projects", fileNameProperty="cover")
+     *
+     * @var File|null
+     */
+    private $coverFile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $cover;
 
@@ -58,6 +68,11 @@ class Project
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $stack;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $team;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -183,12 +198,26 @@ class Project
         return $this;
     }
 
+    public function setCoverFile(?File $imageFile = null): void
+    {
+        $this->coverFile = $imageFile;
+
+        if (null !== $imageFile) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getCoverFile(): ?File
+    {
+        return $this->coverFile;
+    }
+
     public function getCover(): ?string
     {
         return $this->cover;
     }
 
-    public function setCover(string $cover): self
+    public function setCover(?string $cover = null): self
     {
         $this->cover = $cover;
 
@@ -203,6 +232,18 @@ class Project
     public function setStack(?string $stack): self
     {
         $this->stack = $stack;
+
+        return $this;
+    }
+
+    public function getTeam(): ?string
+    {
+        return $this->team;
+    }
+
+    public function setTeam(?string $team): self
+    {
+        $this->team = $team;
 
         return $this;
     }
