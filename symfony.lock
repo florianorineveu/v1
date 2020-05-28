@@ -499,6 +499,9 @@
             "webpack.config.js"
         ]
     },
+    "symfony/yaml": {
+        "version": "v5.0.8"
+    },
     "twig/twig": {
         "version": "v2.12.0"
     },
