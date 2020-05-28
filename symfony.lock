@@ -93,17 +93,8 @@
     "doctrine/reflection": {
         "version": "v1.0.0"
     },
-    "easycorp/easy-log-handler": {
-        "version": "1.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.0",
-            "ref": "70062abc2cd58794d2a90274502f81b55cd9951b"
-        },
-        "files": [
-            "config/packages/dev/easy_log_handler.yaml"
-        ]
+    "doctrine/sql-formatter": {
+        "version": "1.0.1"
     },
     "gedmo/doctrine-extensions": {
         "version": "v2.4.39"
@@ -116,9 +107,6 @@
     },
     "guzzlehttp/psr7": {
         "version": "1.6.1"
-    },
-    "jdorn/sql-formatter": {
-        "version": "v1.2.17"
     },
     "jms/metadata": {
         "version": "2.1.0"
@@ -510,9 +498,6 @@
             "package.json",
             "webpack.config.js"
         ]
-    },
-    "symfony/yaml": {
-        "version": "v4.3.4"
     },
     "twig/twig": {
         "version": "v2.12.0"
