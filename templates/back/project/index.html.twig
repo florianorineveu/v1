@@ -24,12 +24,24 @@
                 <td>{{ project.name }}</td>
                 <td>{{ project.title }}</td>
                 <td>{{ project.slug }}</td>
-                <td>{{ project.sort }}</td>
+                <td>
+                    {% if project.sort %}
+                        <a href="{{ path('back_projects_direction', {'id': project.id, 'direction': 'up'}) }}">
+                            &lt;
+                        </a>
+                    {% else %}
+                        &lt;
+                    {% endif %}
+                    {{ project.sort ?: 0 }}
+                    <a href="{{ path('back_projects_direction', {'id': project.id, 'direction': 'down'}) }}">
+                        &gt;
+                    </a>
+                </td>
                 <td>{{ project.enabled ? 'Yes' : 'No' }}</td>
                 <td>{{ project.createdAt ? project.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ project.updatedAt ? project.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('back_projects_show', {'id': project.id}) }}">show</a>
+                    <a href="{{ path('project', {'slug': project.slug}) }}">show</a>
                     <a href="{{ path('back_projects_edit', {'id': project.id}) }}">edit</a>
                 </td>
             </tr>

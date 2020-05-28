@@ -5,6 +5,8 @@ namespace App\Controller\Back;
 use App\Entity\Project;
 use App\Form\ProjectType;
 use App\Repository\ProjectRepository;
+use Doctrine\Common\Collections\Criteria;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,7 +23,10 @@ class ProjectController extends AbstractController
     public function index(ProjectRepository $projectRepository): Response
     {
         return $this->render('back/project/index.html.twig', [
-            'projects' => $projectRepository->findAll(),
+            'projects' => $projectRepository->findBy([], [
+                'sort' => Criteria::ASC,
+                'updatedAt' => Criteria::DESC,
+            ]),
         ]);
     }
 
@@ -88,6 +93,24 @@ class ProjectController extends AbstractController
             $entityManager->remove($project);
             $entityManager->flush();
         }
+
+        return $this->redirectToRoute('back_projects_index');
+    }
+
+    /**
+     * @Route("/{id}/sort/{direction}", name="direction", methods={"GET"})
+     */
+    public function sort(
+        Project $project,
+        string $direction
+    ): Response {
+        if ('up' === $direction && $project->getSort() >= 1) {
+            $project->setSort($project->getSort() - 1);
+        } elseif ('down' === $direction) {
+            $project->setSort($project->getSort() + 1);
+        }
+
+        $this->getDoctrine()->getManager()->flush();
 
         return $this->redirectToRoute('back_projects_index');
     }
