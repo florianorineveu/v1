@@ -1,45 +1,45 @@
 .alnilam-navigation {
-  margin-bottom: 4rem;
+    margin-bottom: 4rem;
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
-    li {
-      margin-bottom: 1rem;
+        li {
+            margin-bottom: 1rem;
 
-      a {
-        display: inline-block;
-        padding: .2rem .5rem;
-        width: 13rem;
+            a {
+                display: inline-block;
+                padding: .2rem .5rem;
+                width: 13rem;
 
-        background: $text;
-        border: 3px solid $text;
-        transition: all .2s ease-in-out;
+                background: $text;
+                border: 3px solid $text;
+                transition: all .2s ease-in-out;
 
-        @include kepler;
-        color: $background;
+                @include kepler;
+                color: $background;
 
-        &:hover {
-          background: $background;
+                &:hover {
+                    background: $background;
 
-          color: $text;
+                    color: $text;
+                }
+            }
+
+            &.active {
+                a {
+                    padding-top: .5rem;
+
+                    background: $background;
+                    border: 0;
+                    border-bottom: 3px solid $text;
+
+                    @include keplerB;
+                    color: $text;
+                }
+            }
         }
-      }
-
-      &.active {
-        a {
-          padding-top: .5rem;
-
-          background: $background;
-          border: 0;
-          border-bottom: 3px solid $text;
-
-          @include keplerB;
-          color: $text;
-        }
-      }
     }
-  }
 }
