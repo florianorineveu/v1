@@ -1,36 +1,36 @@
 .left {
-  text-align: left;
+    text-align: left;
 }
 
 .center {
-  text-align: center;
+    text-align: center;
 }
 
 .right {
-  text-align: right;
+    text-align: right;
 }
 
 .flex {
-  display: flex;
-  flex-wrap: wrap;
-
-  > .left, > .right {
-    flex: 1;
-  }
-
-  @media screen and (max-width: 1024px) {
-    display: initial;
+    display: flex;
+    flex-wrap: wrap;
 
     > .left, > .right {
-      flex: initial;
-      text-align: center;
+        flex: 1;
     }
-  }
+
+    @media screen and (max-width: 1024px) {
+        display: initial;
+
+        > .left, > .right {
+            flex: initial;
+            text-align: center;
+        }
+    }
 }
 
 .content {
-  @media screen and (max-width: 1024px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+    @media screen and (max-width: 1024px) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }

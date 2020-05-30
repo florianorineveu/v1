@@ -11,191 +11,191 @@
 @import url("https://use.typekit.net/dya2brt.css");
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  background-color: $background;
+    background-color: $background;
 
-  @include kepler;
-  color: $text;
-  font-size: 1.8rem;
-  letter-spacing: .1rem;
+    @include kepler;
+    color: $text;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
 }
 
 .logo {
-  display: block;
-  height: 12rem;
-  width: 10rem;
+    display: block;
+    height: 12rem;
+    width: 10rem;
 
-  background: url('../img/logo.png') no-repeat top left;
-  background-size: contain;
-  border: 0;
+    background: url('../img/logo.png') no-repeat top left;
+    background-size: contain;
+    border: 0;
 
-  font-size: 0;
+    font-size: 0;
 
 }
 
 a {
-  border-bottom: 2px solid transparent;
-  transition: border-bottom-color ease-in-out .2s;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color ease-in-out .2s;
 
-  color: $text;
-  font-weight: bold;
-  text-decoration: none;
+    color: $text;
+    font-weight: bold;
+    text-decoration: none;
 
-  &:hover, &:focus {
-    border-bottom-color: $text;
-  }
+    &:hover, &:focus {
+        border-bottom-color: $text;
+    }
 }
 
 .dual-col {
-  margin-top: 2rem;
+    margin-top: 2rem;
 
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 
-  > .btn {
-    width: 43%;
-  }
+    > .btn {
+        width: 43%;
+    }
 }
 
 .btn {
-  display: inline-block;
-  padding: 2rem;
+    display: inline-block;
+    padding: 2rem;
 
-  border: 4px solid $text;
-  transition: all ease-in-out .5s;
+    border: 4px solid $text;
+    transition: all ease-in-out .5s;
 
-  text-align: center;
+    text-align: center;
 
-  span {
-    display: block;
-    font-weight: normal;
-    font-style: italic;
-  }
+    span {
+        display: block;
+        font-weight: normal;
+        font-style: italic;
+    }
 
-  &:hover {
-    background: $text;
+    &:hover {
+        background: $text;
 
-    color: $background;
-  }
+        color: $background;
+    }
 }
 
 .content {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100rem;
 
-  p {
-    margin-bottom: 2rem;
+    p {
+        margin-bottom: 2rem;
 
-    line-height: 1.5em;
-  }
+        line-height: 1.5em;
+    }
 }
 
 .typewriter {
-  width: 36rem;
-  border-right: 2rem solid rgba(0,0,0,.75);
-  white-space: nowrap;
-  overflow: hidden;
+    width: 36rem;
+    border-right: 2rem solid rgba(0,0,0,.75);
+    white-space: nowrap;
+    overflow: hidden;
 
-  animation: typewriter 1.5s steps(20) 1s 1 normal both,
-  blinkTextCursor 1s steps(20) infinite normal;
+    animation: typewriter 1.5s steps(20) 1s 1 normal both,
+    blinkTextCursor 1s steps(20) infinite normal;
 }
 
 @keyframes typewriter{
-  from { width: 0; }
-  to { width: 36rem; }
+    from { width: 0; }
+    to { width: 36rem; }
 }
 @keyframes blinkTextCursor{
-  from { border-right-color: rgba(0,0,0,.75); }
-  to { border-right-color: transparent; }
+    from { border-right-color: rgba(0,0,0,.75); }
+    to { border-right-color: transparent; }
 }
 
 .list-inline {
-  display: flex;
+    display: flex;
 
-  li {
-    + li {
-      margin-left: 1rem;
+    li {
+        + li {
+            margin-left: 1rem;
+        }
     }
-  }
 }
 
 .icon {
-  display: inline-block;
-  height: 2.5rem;
-  width: 2.5rem;
+    display: inline-block;
+    height: 2.5rem;
+    width: 2.5rem;
 
-  background-position: center;
-  background-size: contain;
-  border: 0;
+    background-position: center;
+    background-size: contain;
+    border: 0;
 
-  font-size: 0;
+    font-size: 0;
 
-  &.icon-github {
-    background-image: url('../img/github.svg');
-  }
+    &.icon-github {
+        background-image: url('../img/github.svg');
+    }
 
-  &.icon-linkedin {
-    background-image: url('../img/linkedin.svg');
-  }
+    &.icon-linkedin {
+        background-image: url('../img/linkedin.svg');
+    }
 
-  &.icon-twitter {
-    background-image: url('../img/twitter.svg');
-  }
+    &.icon-twitter {
+        background-image: url('../img/twitter.svg');
+    }
 
-  &.icon-webring {
-    background-image: url('../img/webring.svg');
-  }
+    &.icon-webring {
+        background-image: url('../img/webring.svg');
+    }
 }
 
 .list-uses {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 
-  line-height: 1.5em;
+    line-height: 1.5em;
 
-  > li {
-    margin: 0 0 1rem;
-    width: 20rem;
-  }
+    > li {
+        margin: 0 0 1rem;
+        width: 20rem;
+    }
 }
 
 .img-container {
-  margin-bottom: 2rem;
-  text-align: center;
+    margin-bottom: 2rem;
+    text-align: center;
 
-  @include keplerI;
-  color: $muted;
+    @include keplerI;
+    color: $muted;
 
-  img {
-    max-width: 90%;
-  }
+    img {
+        max-width: 90%;
+    }
 }
 
 .projects-list {
-  article {
-    box-sizing: border-box;
-    margin-bottom: 3rem;
-    padding-right: 3rem;
-    width: 25rem;
+    article {
+        box-sizing: border-box;
+        margin-bottom: 3rem;
+        padding-right: 3rem;
+        width: 25rem;
 
-    span {
-      display: block;
-      margin-top: 1rem;
+        span {
+            display: block;
+            margin-top: 1rem;
+        }
     }
-  }
 }
 
 .list-home {
-  article {
-    margin-bottom: 3rem;
+    article {
+        margin-bottom: 3rem;
 
-    span {
-      display: block;
-      margin-top: 1rem;
+        span {
+            display: block;
+            margin-top: 1rem;
+        }
     }
-  }
 }
