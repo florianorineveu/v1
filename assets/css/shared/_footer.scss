@@ -2,7 +2,10 @@
     margin-bottom: 2rem;
     margin-top: 4rem;
 
-    @include font-size(1.4);
+    opacity: .5;
+    transition: opacity ease-in-out .2s;
+
+    @include font-size(1.6);
     align-items: center;
     justify-content: space-between;
 
@@ -25,5 +28,13 @@
                 display: inline-block;
             }
         }
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+
+    @media screen and (max-width: 1024px) {
+        opacity: 1;
     }
 }
