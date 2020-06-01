@@ -10,7 +10,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Alnilam ⊡ Florian" />
     <meta name="twitter:description" content="Florian Neveu, développeur web dans la région de Paris. J’explore le monde du développement essentiellement avec PHP, à l’aide du framework Symfony." />
-    <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/florian-neveu.jpg') }}" />
+    <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/florian-neveu.png') }}" />
     <meta name="twitter:site" content="@fnev_eu" />
     <meta name="twitter:domain" content="{{ app.request.host }}">
 
@@ -18,7 +18,7 @@
     <meta property="og:url" content="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}" />
     <meta property="og:description" content="Florian Neveu, développeur web dans la région de Paris. J’explore le monde du développement essentiellement avec PHP, à l’aide du framework Symfony." />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/florian-neveu.jpg') }}" />
+    <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/florian-neveu.png') }}" />
 {% endblock meta %}
 
 {% block headerClasses -%}
@@ -30,16 +30,17 @@
 
     <p>
         Développeur web dans la région de Paris, je vous laisse découvrir ici l’univers dans lequel j’évolue. Plateforme
-        d’exploration, <a href="{{ path('project', {'slug': 'alnilam'}) }}">Alnilam</a> se présente comme un laboratoire
-        dans lequel je peux coder à ma guise et refactoriser à l’infini. Le partage étant, selon moi, une qualité
-        nécessaire du dévelopeur ainsi qu'une notion clé de l’expérimentation, vous pourrez également y trouver mes
-        tentatives, mes découvertes ou <a href="{{ path('uses') }}">mon setup</a>.
+        d’exploration, <a href="{{ path('project', {'slug': 'alnilam'}) }}">Alnilam</a> se présente comme un
+        laboratoire dans lequel je peux coder à ma guise et refactoriser à l’infini. Le partage étant, selon moi, une
+        qualité nécessaire du dévelopeur ainsi qu'une notion clé de l’expérimentation, vous pourrez également y trouver
+        mes tentatives, mes découvertes ou <a href="{{ path('uses') }}">mon setup</a>.
     </p>
     <p>
-        Je suis actuellement en poste chez <a href="{{ path('project', {'slug': 'newdeal'}) }}">New Deal Technology</a>,
-        start-up développant un outil SAAS pour simplifier la paie et la RH au sein des entreprises. En parallèle, je
-        travaille également pour <a href="{{ path('project', {'slug': 'le-tag-parfait'}) }}">Le Tag Parfait</a> en tant que
-        bénévole et m’occupe de tout ce qui concerne la partie technique (développement/infrastructure/maintenance).
+        Je viens de quitter mon poste chez <a href="{{ path('project', {'slug': 'newdeal'}) }}">New Deal
+        Technology</a>, start-up développant un outil SAAS pour simplifier la paie et la RH au sein des entreprises. En
+        parallèle, je travaille également pour <a href="{{ path('project', {'slug': 'le-tag-parfait'}) }}">Le
+        Tag Parfait</a> en tant que bénévole et m’occupe de tout ce qui concerne la partie technique
+        (développement/infrastructure/maintenance).
     </p>
     <p>
         J’explore le monde du développement essentiellement avec PHP, à l’aide du framework Symfony. Jamais très loin
@@ -62,7 +63,12 @@
         vite que la vitesse de la lumière !
     </p>
     <figure class="img-container">
-        <img src="{{ asset('images/satur-v-lego.jpg') }}" alt="">
+        <img src="{{ asset('images/lego-astronomie.jpg') }}" alt="">
         <figcaption>Je vous avais dit que j'aimais l'astronomie et les Lego...</figcaption>
     </figure>
+
+    <p>
+        P.S. : Mille mercis à <a href="https://twitter.com/wickedclarence" target="_blank">@wickedclarence</a> pour le
+        chouette portrait !
+    </p>
 {% endblock body %}
