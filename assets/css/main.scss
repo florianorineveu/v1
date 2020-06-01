@@ -19,7 +19,7 @@ body {
 
     @include kepler;
     color: $text;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     letter-spacing: .1rem;
 }
 
@@ -178,13 +178,15 @@ a {
 .projects-list {
     article {
         box-sizing: border-box;
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
         padding-right: 3rem;
         width: 25rem;
 
         span {
             display: block;
             margin-top: 1rem;
+
+            line-height: 1.5em;
         }
     }
 }
