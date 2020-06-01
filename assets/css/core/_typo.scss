@@ -30,7 +30,7 @@ code {
 }
 
 #mainContent {
-    ul {
+    ul:not(.list-uses) {
         margin-bottom: 2rem;
         padding-left: 7rem;
 
