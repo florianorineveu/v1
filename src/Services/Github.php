@@ -26,8 +26,7 @@ class Github
     private function fetchCommits($user, $repository, $sha)
     {
         $commits = $this->client->api('repo')->commits()->setPerPage(100)->all($user, $repository, [
-            'branch' => 'main',
-            'sha'    => $sha,
+            'sha' => $sha,
         ]);
 
         if (array_key_exists(99, $commits)) {
