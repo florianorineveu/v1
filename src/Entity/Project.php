@@ -114,6 +114,11 @@ class Project
      */
     private $updatedAt;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $githubBranch;
+
     public function __construct()
     {
         $this->githubDisplayed = false;
@@ -350,5 +355,17 @@ class Project
     public function update()
     {
         $this->updatedAt = new \DateTime();
+    }
+
+    public function getGithubBranch(): ?string
+    {
+        return $this->githubBranch;
+    }
+
+    public function setGithubBranch(?string $githubBranch): self
+    {
+        $this->githubBranch = $githubBranch;
+
+        return $this;
     }
 }
