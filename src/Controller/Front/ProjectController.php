@@ -46,7 +46,11 @@ class ProjectController extends AbstractController
         $lastCommitDate = null;
 
         if ($project->getGithubOwner() && $project->getGithubRepository()) {
-            $commits        = $github->getAllCommits($project->getGithubOwner(), $project->getGithubRepository());
+            $commits        = $github->getAllCommits(
+                $project->getGithubOwner(),
+                $project->getGithubRepository(),
+                $project->getGithubBranch()
+            );
             $totalCommits   = count($commits);
             $lastCommitDate = (new \DateTime($commits[0]['commit']['committer']['date']))->setTimezone(new \DateTimeZone('Europe/Paris'));
         }

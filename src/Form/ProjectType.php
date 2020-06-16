@@ -26,6 +26,7 @@ class ProjectType extends AbstractType
             ->add('githubOwner')
             ->add('githubRepository')
             ->add('githubDisplayed')
+            ->add('githubBranch')
             ->add('url')
             ->add('sort')
             ->add('enabled')
