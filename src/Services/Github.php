@@ -18,7 +18,7 @@ class Github
         );
     }
 
-    public function getAllCommits($user, $repository, $sha = 'main')
+    public function getAllCommits($user, $repository, $sha = 'primary')
     {
         return $this->fetchCommits($user, $repository, $sha);
     }
