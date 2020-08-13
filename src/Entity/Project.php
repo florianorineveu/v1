@@ -85,6 +85,16 @@ class Project
     private $githubRepository;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $githubBranch;
+
+    /**
+     * @ORM\OneToOne(targetEntity=GithubActivity::class, mappedBy="project", cascade={"persist", "remove"})
+     */
+    private $githubActivity;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $githubDisplayed;
@@ -113,11 +123,6 @@ class Project
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updatedAt;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $githubBranch;
 
     public function __construct()
     {
@@ -277,6 +282,35 @@ class Project
         return $this;
     }
 
+    public function getGithubBranch(): ?string
+    {
+        return $this->githubBranch;
+    }
+
+    public function setGithubBranch(?string $githubBranch): self
+    {
+        $this->githubBranch = $githubBranch;
+
+        return $this;
+    }
+
+    public function getGithubActivity(): ?GithubActivity
+    {
+        return $this->githubActivity;
+    }
+
+    public function setGithubActivity(GithubActivity $githubActivity): self
+    {
+        $this->githubActivity = $githubActivity;
+
+        // set the owning side of the relation if necessary
+        if ($githubActivity->getProject() !== $this) {
+            $githubActivity->setProject($this);
+        }
+
+        return $this;
+    }
+
     public function getGithubDisplayed(): ?bool
     {
         return $this->githubDisplayed;
@@ -355,17 +389,5 @@ class Project
     public function update()
     {
         $this->updatedAt = new \DateTime();
-    }
-
-    public function getGithubBranch(): ?string
-    {
-        return $this->githubBranch;
-    }
-
-    public function setGithubBranch(?string $githubBranch): self
-    {
-        $this->githubBranch = $githubBranch;
-
-        return $this;
     }
 }
