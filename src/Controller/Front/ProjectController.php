@@ -42,28 +42,24 @@ class ProjectController extends AbstractController
             throw $this->createNotFoundException();
         }
 
-        $totalCommits   = null;
-        $lastCommitDate = null;
+        $githubActivity = null;
 
-        if ($project->getGithubOwner() && $project->getGithubRepository()) {
+        /*if ($project->getGithubActivity()) {
+            $githubActivity = $project->getGithubActivity();
+        } elseif ($project->getGithubOwner() && $project->getGithubRepository()) {
+            $githubActivity = new \stdClass();
             $commits        = $github->getAllCommits(
                 $project->getGithubOwner(),
                 $project->getGithubRepository(),
                 $project->getGithubBranch()
             );
-            $totalCommits   = count($commits);
-            $lastCommitDate = (new \DateTime($commits[0]['commit']['committer']['date']))->setTimezone(new \DateTimeZone('Europe/Paris'));
-        }
+
+            $githubActivity->totalCommits   = count($commits);
+            $githubActivity->lastCommitDate = (new \DateTime($commits[0]['commit']['committer']['date']))->setTimezone(new \DateTimeZone('Europe/Paris'));
+        }*/
 
         return $this->render('front/projects/show.html.twig', [
-            'project'       => $project,
-            'total_commits' => $totalCommits,
-            'last_activity' => $lastCommitDate,
-        ]);
-
-        return $this->render('front/projects/' . str_replace('-', '_', $slug) . '.html.twig', [
-            'total_commits' => $totalCommits,
-            'last_activity' => $lastCommitDate,
+            'project' => $project,
         ]);
     }
 }

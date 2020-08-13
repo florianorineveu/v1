@@ -19,6 +19,18 @@ class ProjectRepository extends ServiceEntityRepository
         parent::__construct($registry, Project::class);
     }
 
+    /**
+     * @return Project[]
+     */
+    public function findForGithubActivity(): array
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.githubOwner IS NOT NULL')
+            ->andWhere('p.githubRepository IS NOT NULL')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Project[] Returns an array of Project objects
     //  */
