@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Entity\GithubActivity;
+use App\Entity\Project;
 use Github\Client;
 
 class Github
@@ -36,5 +38,30 @@ class Github
         }
 
         return $commits;
+    }
+
+    public function updateActivity(Project $project)
+    {
+        if (!$project->getGithubActivity()) {
+            $githubActivity = new GithubActivity();
+            $project->setGithubActivity($githubActivity);
+        }
+
+        try {
+            $commits = $this->getAllCommits(
+                $project->getGithubOwner(),
+                $project->getGithubRepository(),
+                $project->getGithubBranch()
+            );
+        } catch (\Exception $exception) {
+            return false;
+        }
+
+        $githubActivity
+            ->setTotalCommits(count($commits))
+            ->setLastCommit($commits[0]['commit'])
+        ;
+
+        return $githubActivity;
     }
 }
