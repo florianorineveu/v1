@@ -20,31 +20,17 @@ class Github
         );
     }
 
-    public function getAllCommits($user, $repository, $sha = 'primary')
-    {
-        return $this->fetchCommits($user, $repository, $sha);
-    }
-
-    private function fetchCommits($user, $repository, $sha)
-    {
-        $commits = $this->client->api('repo')->commits()->setPerPage(100)->all($user, $repository, [
-            'sha' => $sha,
-        ]);
-
-        if (array_key_exists(99, $commits)) {
-            $lastCommit = $commits[99];
-            unset($commits[99]);
-            $commits = array_merge($commits, $this->fetchCommits($user, $repository, $lastCommit['sha']));
-        }
-
-        return $commits;
-    }
-
+    /**
+     * @param Project $project
+     * @return GithubActivity|bool
+     */
     public function updateActivity(Project $project)
     {
         if (!$project->getGithubActivity()) {
             $githubActivity = new GithubActivity();
             $project->setGithubActivity($githubActivity);
+        } else {
+            $githubActivity = $project->getGithubActivity();
         }
 
         try {
@@ -63,5 +49,25 @@ class Github
         ;
 
         return $githubActivity;
+    }
+
+    private function getAllCommits($user, $repository, $sha = 'primary')
+    {
+        return $this->fetchCommits($user, $repository, $sha);
+    }
+
+    private function fetchCommits($user, $repository, $sha)
+    {
+        $commits = $this->client->api('repo')->commits()->setPerPage(100)->all($user, $repository, [
+            'sha' => $sha,
+        ]);
+
+        if (array_key_exists(99, $commits)) {
+            $lastCommit = $commits[99];
+            unset($commits[99]);
+            $commits = array_merge($commits, $this->fetchCommits($user, $repository, $lastCommit['sha']));
+        }
+
+        return $commits;
     }
 }
