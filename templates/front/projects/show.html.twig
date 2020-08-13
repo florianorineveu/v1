@@ -61,10 +61,13 @@
             {{ project.team }}
         </p>
         <p class="right muted">
-            {% if total_commits %}
-                {{ 'projects.show.commits'|trans({}, 'front') ~ ' ' ~ total_commits }} -
-                {{ 'projects.show.last_activity'|trans({}, 'front') }} <abbr title="{{ last_activity|date('d/m/Y à H:i') }}">
-                {{ last_activity.timestamp }}
+            {% if project.githubActivity %}
+                {{ 'projects.show.commits'|trans({}, 'front') ~ ' ' ~ project.githubActivity.totalCommits }}
+
+                {% if project.githubActivity.lastCommit %}
+                    - {{ 'projects.show.last_activity'|trans({}, 'front') }} <abbr title="{{ project.githubActivity.lastCommit.committer.date|date('d/m/Y à H:i', 'Europe/Paris') }}">
+                    {{ project.githubActivity.lastCommit.committer.date|date('U', 'Europe/Paris') }}
+                {% endif %}
             </abbr><br>
             {% endif %}
 

@@ -3,9 +3,7 @@
 namespace App\Controller\Front;
 
 use App\Repository\ProjectRepository;
-use App\Services\Github;
 use Doctrine\Common\Collections\Criteria;
-use Github\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -31,7 +29,7 @@ class ProjectController extends AbstractController
     /**
      * @Route("/projets/{slug}", name="project")
      */
-    public function project(Github $github, ProjectRepository $projectRepository, $slug)
+    public function project(ProjectRepository $projectRepository, $slug)
     {
         $project = $projectRepository->findOneBy([
             'enabled' => true,
@@ -42,28 +40,8 @@ class ProjectController extends AbstractController
             throw $this->createNotFoundException();
         }
 
-        $totalCommits   = null;
-        $lastCommitDate = null;
-
-        if ($project->getGithubOwner() && $project->getGithubRepository()) {
-            $commits        = $github->getAllCommits(
-                $project->getGithubOwner(),
-                $project->getGithubRepository(),
-                $project->getGithubBranch()
-            );
-            $totalCommits   = count($commits);
-            $lastCommitDate = (new \DateTime($commits[0]['commit']['committer']['date']))->setTimezone(new \DateTimeZone('Europe/Paris'));
-        }
-
         return $this->render('front/projects/show.html.twig', [
-            'project'       => $project,
-            'total_commits' => $totalCommits,
-            'last_activity' => $lastCommitDate,
-        ]);
-
-        return $this->render('front/projects/' . str_replace('-', '_', $slug) . '.html.twig', [
-            'total_commits' => $totalCommits,
-            'last_activity' => $lastCommitDate,
+            'project' => $project,
         ]);
     }
 }
