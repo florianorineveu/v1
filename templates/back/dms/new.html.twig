@@ -1,0 +1,9 @@
+{% extends 'back/base.html.twig' %}
+
+{% block body %}
+    <h1>Create new directory</h1>
+
+    {{ include('back/dms/_form.html.twig') }}
+
+    <a href="{{ path('back_dms_index') }}">back to list</a>
+{% endblock %}

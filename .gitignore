@@ -1,5 +1,5 @@
 .idea/
-
+/public/uploads
 composer.phar
 
 ### Linux template

@@ -1,0 +1,42 @@
+{% extends 'back/base.html.twig' %}
+
+{% block body %}
+    <h1>DMS</h1>
+
+    <p>{{ full_path }}</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if current_folder.parentDmsFolder %}
+                <tr>
+                    <td>
+                        <a href="{{ path('back_dms_index', {'parentDmsFolderId': current_folder.parentDmsFolder.id}) }}">
+                            ..
+                        </a>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            {% endif %}
+            {% for dms_folder in dms_folders %}
+                <tr>
+                    <td>
+                        <a href="{{ path('back_dms_index', {'parentDmsFolderId': dms_folder.id}) }}">
+                            {{ dms_folder.name }}
+                        </a>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2">no records found</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
