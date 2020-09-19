@@ -1,11 +1,12 @@
 {% extends 'front/base.html.twig' %}
 
 {% block title -%}
-    Alnilam
+    {{ parent() ~ 'Portfolio de Florian Neveu' }}
 {%- endblock title %}
 
 {% block meta -%}
-    <meta name="description" content="Alnilam, plate-forme web personnelle de Florian Neveu." />
+    <meta name="description" content="Alnilam, plate-forme web personnelle de Florian Neveu, développeur en Île-de-France." />
+    <meta name="keywords" content="Florian Neveu, Florian, Neveu, développeur, développeur web, php, symfony">
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Alnilam" />
@@ -34,7 +35,7 @@
 {% block body %}
     <p>
         Bienvenue sur <a href="{{ path('project', {'slug': 'alnilam'}) }}">Alnilam</a>, portfolio et "vitrine publique"
-        de <a href="{{ path('about') }}">Florian Neveu</a>. Alnilam a vu le jour le 31 janvier 2020 à 18:42, soit il y
+        de <a href="{{ path('about') }}"><strong>Florian Neveu</strong></a>. Alnilam a vu le jour le 31 janvier 2020 à 18:42, soit il y
         a {{ birthday_count_days }} jours. Vous y trouverez <a href="{{ path('project_index') }}">projets</a> en cours
         ou passés, tentatives d'articles ou encore des sortes d'études de cas sur des travaux coups de coeur.
     </p>
