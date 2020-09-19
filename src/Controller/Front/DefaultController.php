@@ -6,6 +6,7 @@ use App\Repository\ProjectRepository;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -97,5 +98,21 @@ class DefaultController extends AbstractController
         }
 
         return $this->redirectToRoute('random');
+    }
+
+    /**
+     * @Route("/sitemap.xml", name="sitemap")
+     */
+    public function sitemap(ProjectRepository $projectRepository)
+    {
+        return new Response(
+            $this->renderView('front/sitemap.xml.twig', [
+                'projects' => $projectRepository->findBy([
+                    'enabled' => true,
+                ])
+            ]),
+            Response::HTTP_OK,
+            ['Content-Type' => 'text/xml']
+        );
     }
 }

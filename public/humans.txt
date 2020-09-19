@@ -1,0 +1,10 @@
+/* TEAM */
+    Owner/Developer: Florian Neveu
+    Contact: hello [at] fnev.eu
+    Twitter: @fnev_eu
+    From: Paris, France
+
+/* SITE */
+    Last update: 2020/09/20
+    Language: French
+    Doctype: HTML5
