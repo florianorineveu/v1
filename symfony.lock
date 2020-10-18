@@ -96,6 +96,9 @@
     "doctrine/sql-formatter": {
         "version": "1.0.1"
     },
+    "fnev-eu/lune": {
+        "version": "0.1"
+    },
     "gedmo/doctrine-extensions": {
         "version": "v2.4.39"
     },
@@ -139,7 +142,7 @@
         "version": "v9.99.99"
     },
     "php": {
-        "version": "7.3"
+        "version": "7.4"
     },
     "php-http/cache-plugin": {
         "version": "1.7.0"

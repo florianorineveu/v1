@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1330c581b1d6265b54bc1c3452fd795e",
+    "content-hash": "87a475dc040437c1e378eb3ab2d3bd68",
     "packages": [
         {
             "name": "antishov/doctrine-extensions-bundle",
@@ -1593,6 +1593,16 @@
                 "sql"
             ],
             "time": "2020-05-29T18:32:49+00:00"
+        },
+        {
+            "name": "fnev-eu/lune",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:fnev-eu/Lune.git",
+                "reference": "feature/bundle"
+            },
+            "type": "library"
         },
         {
             "name": "gedmo/doctrine-extensions",
