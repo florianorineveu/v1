@@ -16,7 +16,9 @@ class DefaultController extends AbstractController
     #[Route('/{slug}', name: 'home', requirements: ['slug' => '.+'], defaults: ['slug' => null])]
     public function page(Page $page)
     {
-        dd($page);
+        return $this->render('front/index.html.twig', [
+            'page' => $page,
+        ]);
     }
 
     /**
