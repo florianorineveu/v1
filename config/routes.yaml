@@ -1,8 +1,7 @@
-front_controllers:
-    resource: ../src/Controller/Front/
+controllers:
+    resource: ../src/Controller/
     type: annotation
 
-back_controllers:
-    resource: ../src/Controller/Back/
+kernel:
+    resource: ../src/Kernel.php
     type: annotation
-    prefix: /io/

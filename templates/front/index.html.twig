@@ -1,53 +1,5 @@
-{% extends 'front/base.html.twig' %}
+<html>
+<body>
 
-{% block title -%}
-    {{ parent() ~ 'Portfolio de Florian Neveu' }}
-{%- endblock title %}
-
-{% block meta -%}
-    <meta name="description" content="Alnilam, plate-forme web personnelle de Florian Neveu, développeur en Île-de-France." />
-    <meta name="keywords" content="Florian Neveu, Florian, Neveu, développeur, développeur web, php, symfony">
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Alnilam" />
-    <meta name="twitter:description" content="Alnilam, plate-forme web personnelle de Florian Neveu." />
-    <meta name="twitter:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/alnilam/alnilam.jpg') }}" />
-    <meta name="twitter:site" content="@fnev_eu" />
-    <meta name="twitter:domain" content="{{ app.request.host }}">
-
-    <meta property="og:site_name" content="Alnilam" />
-    <meta property="og:title" content="Alnilam" />
-    <meta property="og:url" content="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}" />
-    <meta property="og:description" content="Alnilam, plate-forme web personnelle de Florian Neveu." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() ~ asset('images/projets/alnilam/alnilam.jpg') }}" />
-{% endblock meta %}
-
-{% block headerClasses -%}header header-home header-dark{%- endblock headerClasses %}
-
-{% block header %}
-    <div class="content">
-        <a href="{{ path('home') }}" class="logo">Alnilam</a>
-        <h1 class="h1 typewriter">Alnilam initialisée.</h1>
-    </div>
-{% endblock header %}
-
-{% block body %}
-    <p>
-        Bienvenue sur <a href="{{ path('project', {'slug': 'alnilam'}) }}">Alnilam</a>, portfolio et "vitrine publique"
-        de <a href="{{ path('about') }}"><strong>Florian Neveu</strong></a>. Alnilam a vu le jour le 31 janvier 2020 à 18:42, soit il y
-        a {{ birthday_count_days }} jours. Vous y trouverez <a href="{{ path('project_index') }}">projets</a> en cours
-        ou passés, tentatives d'articles ou encore des sortes d'études de cas sur des travaux coups de coeur.
-    </p>
-
-    <h2 class="h2">Derniers projets :</h2>
-
-    <div class="list-home">
-        {% for project in last_projects %}
-            <article>
-                <a href="{{ path('project', {'slug': project.slug}) }}">{{ project.name }}</a>
-                <span>{{ project.shortDescription }}</span>
-            </article>
-        {% endfor %}
-    </div>
-{% endblock body %}
+</body>
+</html>

@@ -1,7 +1,6 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
-    debug: '%kernel.debug%'
-    form_themes: ['bootstrap_4_layout.html.twig']
-    strict_variables: '%kernel.debug%'
-    globals:
-        #front_helper: "@App\\Services\\FrontHelper"
+
+when@test:
+    twig:
+        strict_variables: true
