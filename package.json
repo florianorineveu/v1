@@ -2,9 +2,9 @@
     "devDependencies": {
         "@symfony/webpack-encore": "^0.30.2",
         "core-js": "^3.6.5",
-        "sass": "^1.43.4",
         "popper.js": "^1.16.1",
         "regenerator-runtime": "^0.13.7",
+        "sass": "^1.43.4",
         "sass-loader": "^9.0.2",
         "webpack-notifier": "^1.8.0"
     },
