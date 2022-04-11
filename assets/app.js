@@ -6,7 +6,17 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
+import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+
+let email = 'hello@fnev.eu';
+
+document.getElementsByClassName('js-mailto').forEach(function (htmlElement) {
+    htmlElement.setAttribute('href', 'mailto:' + email);
+});
+
+document.getElementsByClassName('js-mail').forEach(function (htmlElement) {
+    htmlElement.innerHTML = email;
+});

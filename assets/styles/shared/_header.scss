@@ -1,0 +1,58 @@
+.header {
+    position: relative;
+
+    margin-bottom: 4rem;
+
+    background-color: $background;
+
+    .go-main-content {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+
+        color: $background;
+
+        &:focus {
+            z-index: 1;
+        }
+
+        &:hover, &:focus {
+            border-bottom-color: $background;
+        }
+    }
+
+    &.header-dark {
+        .go-main-content {
+            color: $text;
+
+            &:hover, &:focus {
+                border-bottom-color: $text;
+            }
+        }
+        .logo {
+            background-image: url('../../images/logo.png');
+        }
+    }
+
+    &.header-home {
+        margin-top: 2rem;
+
+        .go-main-content {
+            right: 0;
+        }
+    }
+
+    &.header-with-bg {
+        height: calc(100vh - 25rem);
+
+        /*&.header-florian {
+            background: url('../../images/florian-neveu.png') top 15% center no-repeat;
+            background-size: cover;
+        }
+
+        &.header-uses {
+            background: url('../../images/uses.jpg') top 15% center no-repeat;
+            background-size: cover;
+        }*/
+    }
+}

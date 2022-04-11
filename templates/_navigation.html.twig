@@ -1,0 +1,24 @@
+{% import '_macros.html.twig' as macros %}
+
+<nav id="mainNav" class="alnilam-navigation content">
+    <ul>
+        <li class="{{ macros.is_active('home') }}">
+            <a href="{{ path('home') }}">Accueil</a>
+        </li>
+        {#<li class="{{ macros.is_active(['project_index', 'project']) }}">
+            <a href="{{ path('project_index') }}">Projets</a>
+        </li>#}
+        {#<li>
+            <a href="#">Études de cas</a>
+        </li>#}
+        <li class="{{ macros.is_active('page_about') }}">
+            <a href="{{ path('page_show', {'slug': 'florian'}) }}">À propos</a>
+        </li>
+        {#<li class="{{ macros.is_active('uses') }}">
+            <a href="{{ path('uses') }}">Uses</a>
+        </li>#}
+        {#<li>
+            <a href="#">Outils</a>
+        </li>#}
+    </ul>
+</nav>

@@ -2,9 +2,8 @@
 
 namespace App\Controller;
 
-
 use App\Entity\Page;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\PageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,11 +12,20 @@ use Symfony\Component\Routing\RouterInterface;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/{slug}', name: 'home', requirements: ['slug' => '.+'], defaults: ['slug' => null])]
-    public function page(Page $page)
+    #[Route('/', name: 'home')]
+    public function index(PageRepository $pageRepository)
     {
-        return $this->render('front/index.html.twig', [
-            'page' => $page,
+        $page            = $pageRepository->findOneBy([
+            'slug' => null,
+            'type' => Page::TYPES['SYSTEM'],
+        ]);
+        $alnilamBirthday = new \DateTime('2020-01-31 18:42');
+        $dateDiff        = date_diff($alnilamBirthday, new \DateTime());
+
+        return $this->render('page/home.html.twig', [
+            'birthday_count_days' => $dateDiff->days,
+            'last_projects'       => [],
+            'page'                => $page,
         ]);
     }
 

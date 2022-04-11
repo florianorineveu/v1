@@ -1,0 +1,40 @@
+.alnilam-footer.content {
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+
+    opacity: .5;
+    transition: opacity ease-in-out .2s;
+
+    @include font-size(1.6);
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+        margin-bottom: 0;
+    }
+
+    ul {
+        li {
+            line-height: 2.5rem;
+        }
+
+        @media screen and (max-width: 1024px) {
+            display: block;
+            margin: 1.7rem 0 2rem;
+
+            text-align: center;
+
+            li {
+                display: inline-block;
+            }
+        }
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+
+    @media screen and (max-width: 1024px) {
+        opacity: 1;
+    }
+}

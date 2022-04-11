@@ -1,0 +1,26 @@
+<html>
+<body>
+    <h1>Admin - Pages</h1>
+
+    <table>
+        <thead>
+            <th>#</th>
+            <th>Nom</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for page in pages %}
+                <tr>
+                    <td>{{ page.id }}</td>
+                    <td>{{ page.name }}</td>
+                    <td></td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">Il n'y a pas de page actuellement.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

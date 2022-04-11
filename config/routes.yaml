@@ -2,6 +2,11 @@ controllers:
     resource: ../src/Controller/
     type: annotation
 
+admin_area:
+    resource: ../src/Controller/AdminArea
+    type: annotation
+    prefix: /admin-area/
+
 kernel:
     resource: ../src/Kernel.php
     type: annotation

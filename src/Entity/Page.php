@@ -10,10 +10,17 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Sluggable\Handler\TreeSlugHandler;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Symfony\Bridge\Doctrine\IdGenerator\UuidGenerator;
+use Symfony\Component\Uid\Uuid;
 
 #[ORM\Entity(repositoryClass: PageRepository::class)]
 class Page
 {
+    const TYPES = [
+        'SYSTEM'  => 'system',
+        'CONTENT' => 'content',
+        'ENTITY'  => 'entity',
+    ];
+
     use TimestampableEntity;
 
     #[ORM\Id]
@@ -39,12 +46,18 @@ class Page
     #[ORM\OneToMany(mappedBy: 'parent', targetEntity: self::class)]
     private $children;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $type;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $template;
+
     public function __construct()
     {
         $this->children = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId(): ?Uuid
     {
         return $this->id;
     }
@@ -111,6 +124,30 @@ class Page
                 $child->setParent(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getTemplate(): ?string
+    {
+        return $this->template;
+    }
+
+    public function setTemplate(string $template): self
+    {
+        $this->template = $template;
 
         return $this;
     }

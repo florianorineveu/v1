@@ -1,0 +1,43 @@
+{% extends 'admin_area/base.html.twig' %}
+
+{% block title %}SocialNetwork index{% endblock %}
+
+{% block body %}
+    <h1>SocialNetwork index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Url</th>
+                <th>Title</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for social_network in social_networks %}
+            <tr>
+                <td>{{ social_network.id }}</td>
+                <td>{{ social_network.name }}</td>
+                <td>{{ social_network.url }}</td>
+                <td>{{ social_network.title }}</td>
+                <td>{{ social_network.createdAt ? social_network.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ social_network.updatedAt ? social_network.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('admin_social_network_show', {'id': social_network.id}) }}">show</a>
+                    <a href="{{ path('admin_social_network_edit', {'id': social_network.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_social_network_new') }}">Create new</a>
+{% endblock %}
