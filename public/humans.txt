@@ -1,10 +1,10 @@
 /* TEAM */
-    Owner/Developer: Florian Neveu
+    Owner/Developer: Florian "Ori" Neveu
     Contact: hello [at] fnev.eu
     Twitter: @fnev_eu
     From: Paris, France
 
 /* SITE */
-    Last update: 2020/09/20
+    Last update: 2022/04/07
     Language: French
     Doctype: HTML5
