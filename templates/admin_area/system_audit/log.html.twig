@@ -1,0 +1,93 @@
+{% extends 'admin_area/base.html.twig' %}
+
+{% block title %}SocialNetwork index{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <h1>Admin - SocialNetwork</h1>
+        </div>
+    </div>
+
+    <section>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <form action="{{ path('admin_system_audit_log') }}" class="form-inline js-location-select js-location-checkbox" method="post">
+                            <label for="selectFile" class="mb-2 mr-sm-2">Fichier :</label>
+                            <select name="selected_file" id="selectFile" class="custom-select mb-2 mr-sm-5">
+                                {% for key, available_log_file in available_log_files %}
+                                    <option value="{{ key }}" {{ key is same as (current_file) ? 'selected' }}>{{ available_log_file }}</option>
+                                {% endfor %}
+                            </select>
+
+                            <div class="custom-control custom-checkbox mb-2 mr-sm-2">
+                                <input type="checkbox" name="display_all" class="custom-control-input" id="displayAll" {{ app.request.request.get('display_all') ? 'checked' }}>
+                                <label class="custom-control-label" for="displayAll">Afficher tout</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <table class="table table-bordered table-striped dataTable" data-order="[[ 4, &quot;desc&quot; ]]">
+                                <thead>
+                                    <tr>
+                                        <th data-priority="2" data-orderable="false">&nbsp;</th>
+                                        <th data-priority="2">Message</th>
+                                        <th data-priority="1">Canal</th>
+                                        <th data-priority="1">Niveau</th>
+                                        <th data-priority="1">Date</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th data-priority="2">#</th>
+                                        <th data-priority="2">Message</th>
+                                        <th data-priority="1">Canal</th>
+                                        <th data-priority="1">Niveau</th>
+                                        <th data-priority="1">Date</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                    {% for key, log in logs %}
+                                        <tr>
+                                            <td data-order="{{ key }}">
+                                                <button class="btn btn-primary btn-sm js-collapse-json collapsed" type="button" data-toggle="collapse" data-target="{{ '#collapseDetails' ~ key }}" aria-expanded="false" aria-controls="collapseExample">
+                                                    +
+                                                </button>
+                                            </td>
+                                            <td>
+                                                {{ log.message }}
+                                                {% if log.details %}
+                                                    <div class="collapse mt-2" id="{{ 'collapseDetails' ~ key }}">
+                                                        <strong>Contexte :</strong>
+                                                        <div class="js-json-viewer" data-json="{{ log.details }}"></div>
+                                                    </div>
+                                                {% endif %}
+                                            </td>
+                                            <td>{{ log.channel|capitalize }}</td>
+                                            <td>
+                                                {% if log.level in (['ERROR', 'CRITICAL']) %}
+                                                    {% set badge_color = 'danger' %}
+                                                {% elseif log.level in (['NOTICE']) %}
+                                                    {% set badge_color = 'warning' %}
+                                                {% elseif log.level in (['DEBUG']) %}
+                                                    {% set badge_color = 'secondary' %}
+                                                {% else %}
+                                                    {% set badge_color = log.level|lower %}
+                                                {% endif %}
+                                                <span class="badge {{ 'badge-' ~ badge_color }}">{{ log.level }}</span>
+                                            </td>
+                                            <td data-order="{{ log.date_time|date('YmdHis') }}">{{ log.date_time|date('d/m/Y H:i:s') }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

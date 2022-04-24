@@ -26,6 +26,8 @@ security:
                 check_path: admin_security_login
                 enable_csrf: true
                 use_referer: true
+            logout:
+                path: admin_security_logout
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall

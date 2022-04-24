@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ app.request.locale|split('_')|first|default('fr') }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, noimageindex, notranslate, nocache" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="generator" content="Lune" />
 
-    <title>{% block title %}Admin{% endblock title %}</title>
+    <title>{% block page_title %}Lune{% endblock %}</title>
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('admin') }}
     {% endblock stylesheets %}
 </head>
+<body id="{% block body_id %}{% endblock %}" class="lune {% block body_class %}{% endblock %}">
+    {{ include('admin_area/_header.html.twig') }}
 
-<body>
-    {% block body %}
-    {% endblock body %}
+    <nav id="sidebarMenu" class="sidebar">
+        <div class="logo">
+            Lune
+        </div>
+        {{ include('admin_area/_sidebar.html.twig') }}
+    </nav>
+    <main class="main-content">
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label is not same as ('error') ?: 'danger' }} alert-dismissible fade show" role="alert">
+                    <strong>{{ label|capitalize }} !</strong> {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% block content %}{% endblock %}
+    </main>
+
 
     {% block javascripts %}
         {{ encore_entry_script_tags('admin') }}
     {% endblock javascripts %}
 </body>
 </html>
-

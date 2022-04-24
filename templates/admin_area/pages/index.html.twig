@@ -1,26 +1,67 @@
-<html>
-<body>
-    <h1>Admin - Pages</h1>
+{% extends 'admin_area/base.html.twig' %}
 
-    <table>
-        <thead>
-            <th>#</th>
-            <th>Nom</th>
-            <th>Actions</th>
-        </thead>
-        <tbody>
-            {% for page in pages %}
-                <tr>
-                    <td>{{ page.id }}</td>
-                    <td>{{ page.name }}</td>
-                    <td></td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="3">Il n'y a pas de page actuellement.</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <h1>Admin - Pages</h1>
+        </div>
+    </div>
+
+    <section>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="float-right">
+                            <a href="{{ path('admin_page_index') }}" role="button" class="btn btn-primary">Create new</a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <table class="table table-bordered table-striped dataTable">
+                                <thead>
+                                    <tr>
+                                        <th data-priority="1">#</th>
+                                        <th data-priority="2">Nom</th>
+                                        <th data-priority="1">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th data-priority="1">#</th>
+                                        <th data-priority="2">Nom</th>
+                                        <th data-priority="1">Actions</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    {% for page in pages %}
+                                        <tr>
+                                            <td>{{ page.id }}</td>
+                                            <td>{{ page.name }}</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="{{ path('admin_page_index') }}" role="button" class="btn btn-primary">Éditer</a>
+                                                    <a href="#" role="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a class="dropdown-item" href="#">Supprimer</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {% else %}
+                                        <tr>
+                                            <td colspan="3">no records found</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
