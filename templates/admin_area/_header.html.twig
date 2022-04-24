@@ -7,6 +7,30 @@
                         <i class="fas fa-expand fa-lg"></i>
                     </a>
                 </li>
+                <li class="dropdown nav-item mr-3 mr-lg-2">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownI18nLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Système
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownI18nLink">
+                            <a class="dropdown-item" href="{{ path('admin_system_audit_informations') }}">
+                                <i class="far fa-edit mr-2"></i>
+                                Informations système
+                            </a>
+                            <a class="dropdown-item" href="{{ path('admin_system_audit_log') }}">
+                                <i class="far fa-edit mr-2"></i>
+                                Logs applicatif
+                            </a>
+                        {#<a class="dropdown-item" href="#">
+                                    <i class="far fa-edit mr-2"></i>
+                                    Français
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-sliders-h mr-2"></i>
+                                    English
+                                </a>#}
+                    </div>
+                </li>
             </ul>
         </div>
         <div>

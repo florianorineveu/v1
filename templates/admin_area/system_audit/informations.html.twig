@@ -1,0 +1,81 @@
+{% extends 'admin_area/base.html.twig' %}
+
+{% block title %}SocialNetwork index{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <h1>Système - Informations</h1>
+        </div>
+    </div>
+
+    <section>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Serveur
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <ul>
+                                <li><strong>Version PHP :</strong> {{ php_version }}</li>
+                                {% if app.request.server.has('SERVER_SOFTWARE') %}
+                                    <li><strong>Serveur HTTP :</strong> {{ app.request.server.get('SERVER_SOFTWARE') }}</li>
+                                {% endif %}
+                                {% if app.request.server.has('DOCUMENT_ROOT') %}
+                                    <li><strong>Document root :</strong> {{ app.request.server.get('DOCUMENT_ROOT') }}</li>
+                                {% endif %}
+                                {% if app.request.server.has('USER') %}
+                                    <li><strong>User HTTP :</strong> {{ app.request.server.get('USER') ~ ' (' ~ (app.request.server.has('HOME') ? app.request.server.get('HOME')) ~ ')' }}</li>
+                                {% endif %}
+                                <li><strong>Timezone :</strong> {{ default_timezone }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Symfony
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <ul>
+                                <li><strong>Version :</strong> {{ constant('App\\Kernel::VERSION') }}</li>
+                                <li><strong>Debug :</strong> {{ kernel.debug ? 'Activé' : 'Désactivé' }}</li>
+                                <li><strong>Environnement :</strong> {{ kernel.environment }}</li>
+                                <li><strong>Fin de maintenance :</strong> {{ constant('App\\Kernel::END_OF_MAINTENANCE') }}</li>
+                                <li><strong>Fin de vie :</strong> {{ constant('App\\Kernel::END_OF_LIFE') }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Lune
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <ul>
+                                <li><strong>Version :</strong> 0.1.0</li>
+                                <li><strong>Répertoire :</strong> {{ kernel.projectDir }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card mb-4 iframe-container-phpinfo">
+                    <div class="card-header">
+                        phpinfo()
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <iframe src="{{ path('admin_system_audit_phpinfo') }}" frameborder="0" width="100%" height="500"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

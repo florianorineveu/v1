@@ -149,3 +149,11 @@ table.dataTable thead th[class*="sorting"]:not(.sorting_disabled)::after {
 table.dataTable.table-striped tbody tr td {
   border-top: 0;
 }
+
+.iframe-container-phpinfo {
+  height: 100%;
+
+  .card-content, .card-body, iframe {
+    height: 100%;
+  }
+}

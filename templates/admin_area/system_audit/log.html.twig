@@ -5,7 +5,7 @@
 {% block content %}
     <div class="row">
         <div class="col-12">
-            <h1>Admin - SocialNetwork</h1>
+            <h1>Système - Logs applicatifs</h1>
         </div>
     </div>
 
@@ -14,19 +14,33 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <form action="{{ path('admin_system_audit_log') }}" class="form-inline js-location-select js-location-checkbox" method="post">
-                            <label for="selectFile" class="mb-2 mr-sm-2">Fichier :</label>
-                            <select name="selected_file" id="selectFile" class="custom-select mb-2 mr-sm-5">
-                                {% for key, available_log_file in available_log_files %}
-                                    <option value="{{ key }}" {{ key is same as (current_file) ? 'selected' }}>{{ available_log_file }}</option>
-                                {% endfor %}
-                            </select>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <form action="{{ path('admin_system_audit_log') }}" class="form-inline js-location-select js-location-checkbox" method="post">
+                                    <label for="selectFile" class="mb-2 mr-sm-2">Fichier :</label>
+                                    <select name="selected_file" id="selectFile" class="custom-select mb-2 mr-sm-5">
+                                        {% for key, available_log_file in available_log_files %}
+                                            <option value="{{ key }}" {{ key is same as (current_file) ? 'selected' }}>{{ available_log_file }}</option>
+                                        {% endfor %}
+                                    </select>
 
-                            <div class="custom-control custom-checkbox mb-2 mr-sm-2">
-                                <input type="checkbox" name="display_all" class="custom-control-input" id="displayAll" {{ app.request.request.get('display_all') ? 'checked' }}>
-                                <label class="custom-control-label" for="displayAll">Afficher tout</label>
+                                    <div class="custom-control custom-checkbox mb-2 mr-sm-2">
+                                        <input type="checkbox" name="display_all" class="custom-control-input" id="displayAll" {{ app.request.request.get('display_all') ? 'checked' }}>
+                                        <label class="custom-control-label" for="displayAll">Afficher tout</label>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
+                            <div class="col-md-4">
+                                <form action="{{ path('admin_system_audit_log') }}" class="form-inline js-location-select js-location-checkbox" method="post">
+                                    <label for="selectFile" class="mb-2 mr-sm-2">Fichier :</label>
+                                    <select name="selected_file" id="selectFile" class="custom-select mb-2 mr-sm-5">
+                                        {% for key, available_log_file in available_log_files %}
+                                            <option value="{{ key }}" {{ key is same as (current_file) ? 'selected' }}>{{ available_log_file }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
