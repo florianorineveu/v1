@@ -52,9 +52,13 @@ class Page
     #[ORM\Column(type: 'string', length: 255)]
     private $template;
 
+    #[ORM\Column(type: 'boolean')]
+    private $home;
+
     public function __construct()
     {
         $this->children = new ArrayCollection();
+        $this->home     = false;
     }
 
     public function getId(): ?Uuid
@@ -148,6 +152,18 @@ class Page
     public function setTemplate(string $template): self
     {
         $this->template = $template;
+
+        return $this;
+    }
+
+    public function isHome(): bool
+    {
+        return $this->home;
+    }
+
+    public function setHome(bool $home): self
+    {
+        $this->home = $home;
 
         return $this;
     }

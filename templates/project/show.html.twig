@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title -%}
+    {{ project.title ~ ' - ' ~ parent() }}
+{%- endblock title %}
+
+{% block body %}
+    <h1>{{ project.title }}</h1>
+
+    <h2>{{ project.name }}</h2>
+
+    {% for block in project.blocks %}
+        {{ block|render_block }}
+    {% endfor %}
+{% endblock body %}

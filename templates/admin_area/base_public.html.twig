@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|split('_')|first|default('fr') }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, noarchive, nosnippet, noodp, noimageindex, notranslate, nocache">
+    <meta name="viewport" content="width=device width, initial-scale=1">
+    <meta name="author" content="Florian 'Ori' Neveu">
+    <meta name="generator" content="Lune {{ lune.version }}" />
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('admin') }}
+    {% endblock stylesheets %}
+
+    <title>{% block title %}{{ site_info.name }} | Lune{% endblock %}</title>
+</head>
+<body class="{% block body_classes %}public{% endblock %}">
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label is not same as ('error') ?: 'danger' }} alert-dismissible fade show" role="alert">
+                <strong>{{ label|capitalize }} !</strong> {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% block content %}{% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('admin') }}
+    {% endblock javascripts %}
+</body>
+</html>

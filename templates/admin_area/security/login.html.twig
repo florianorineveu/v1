@@ -1,10 +1,46 @@
-{#{% extends 'admin_area/base.html.twig' %}#}
+{% extends 'admin_area/base_public.html.twig' %}
 
-{% block title %}Hello SecurityController!{% endblock %}
+{% block title -%}
+    {{ 'security.login.title'|trans({}, 'admin') ~ ' - ' ~ parent() }}
+{%- endblock title %}
 
-{% block body %}
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit">
+{% block content %}
+    {% form_theme form 'bootstrap_5_layout.html.twig' %}
+    {{ form_start(form, {'attr': {'class': 'form-signin text-center'}}) }}
+        <div class="mb-3">
+            <i class="bi bi-box2-heart-fill text-info" style="font-size: 40px;"></i>
+        </div>
+
+        <h1 class="h3 mb-3">
+            {{ 'security.login.title'|trans({}, 'admin') }}
+        </h1>
+
+        <div class="form-floating">
+            {{ form_widget(form._username)}}
+            {{ form_label(form._username) }}
+        </div>
+        <div class="form-floating mb-3">
+            {{ form_widget(form._password)}}
+            {{ form_label(form._password) }}
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="{{ form._remember_me.vars.name }}">
+                {{ form._remember_me.vars.label|trans({}, 'admin') }}
+                {% do form._remember_me.setRendered %}
+            </label>
+        </div>
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit">
+            {{ 'security.login.form.submit'|trans({}, 'admin') }}
+        </button>
+
+        <hr class="my-4">
+
+        <small><a href="#" class="text-muted">Mot de passe oublié</a></small>
+        <br>
+        <br>
+        <small class="text-muted">&copy; {{ ''|date('Y') }} - Florian Neveu</small>
     {{ form_end(form) }}
-{% endblock %}
+{% endblock content %}

@@ -2,18 +2,18 @@
 <html lang="{{ app.request.locale|split('_')|first|default('fr') }}">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, noimageindex, notranslate, nocache" />
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <meta name="generator" content="Lune" />
-
-    <title>{% block page_title %}Lune{% endblock %}</title>
+    <meta name="robots" content="noindex, noarchive, nosnippet, noodp, noimageindex, notranslate, nocache">
+    <meta name="viewport" content="width=device width, initial-scale=1">
+    <meta name="author" content="Florian 'Ori' Neveu">
+    <meta name="generator" content="Lune {{ lune.version }}" />
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('admin') }}
     {% endblock stylesheets %}
+
+    <title>{% block page_title %}Lune{% endblock %}</title>
 </head>
-<body id="{% block body_id %}{% endblock %}" class="lune {% block body_class %}{% endblock %}">
+<body class="{% block body_classes %}{% endblock %}">
     {{ include('admin_area/_header.html.twig') }}
 
     <nav id="sidebarMenu" class="sidebar">
@@ -33,9 +33,10 @@
                 </div>
             {% endfor %}
         {% endfor %}
-        {% block content %}{% endblock %}
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
     </main>
-
 
     {% block javascripts %}
         {{ encore_entry_script_tags('admin') }}

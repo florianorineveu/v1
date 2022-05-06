@@ -1,0 +1,41 @@
+{% extends 'admin_area/base.html.twig' %}
+
+{% block title %}Project index{% endblock %}
+
+{% block content %}
+    <h1>Project index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Slug</th>
+                <th>Enabled</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for project in projects %}
+            <tr>
+                <td>{{ project.id }}</td>
+                <td>{{ project.name }}</td>
+                <td>{{ project.title }}</td>
+                <td>{{ project.slug }}</td>
+                <td>{{ project.enabled ? 'Oui' : 'Non' }}</td>
+                <td>
+                    <a href="{{ path('admin_project_show', {'id': project.id}) }}">show</a>
+                    <a href="{{ path('admin_project_edit', {'id': project.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_project_new') }}">Create new</a>
+{% endblock %}

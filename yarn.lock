@@ -892,10 +892,10 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
-"@fortawesome/fontawesome-free@^5.15.4":
-  version "5.15.4"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.4.tgz#ecda5712b61ac852c760d8b3c79c96adca5554e5"
-  integrity sha512-eYm8vijH/hpzr/6/1CJ/V/Eb1xQFW2nnUKArb3z+yUWv7HTwj6M7SP957oMjfZjAHU6qpoNc2wQvIxBLWYa/Jg==
+"@fortawesome/fontawesome-free@^6.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-6.1.1.tgz#bf5d45611ab74890be386712a0e5d998c65ee2a1"
+  integrity sha512-J/3yg2AIXc9wznaVqpHVX3Wa5jwKovVF0AMYSnbmcXTiL3PpRPfF58pzWucCwEiCJBp+hCNRLWClTomD8SseKg==
 
 "@hotwired/stimulus-webpack-helpers@^1.0.1":
   version "1.0.1"
@@ -939,6 +939,11 @@
     consola "^2.6.0"
     error-stack-parser "^2.0.0"
     string-width "^4.2.3"
+
+"@popperjs/core@^2.11.5":
+  version "2.11.5"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.5.tgz#db5a11bf66bdab39569719555b0f76e138d7bd64"
+  integrity sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==
 
 "@symfony/stimulus-bridge@^3.0.0":
   version "3.1.0"
@@ -1563,10 +1568,10 @@ boolbase@^1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap@^4.6.1:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.6.1.tgz#bc25380c2c14192374e8dec07cf01b2742d222a2"
-  integrity sha512-0dj+VgI9Ecom+rvvpNZ4MUZJz8dcX7WCX+eTID9+/8HgOkv3dsRzi8BGeZJCQU6flWQVYxwTQnEZFrmJSEO7og==
+bootstrap@^5.1:
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.1.3.tgz#ba081b0c130f810fa70900acbc1c6d3c28fa8f34"
+  integrity sha512-fcQztozJ8jToQWXxVuEyXWW+dSo8AiXWKwiSSrKWsRB/Qt+Ewwza+JWoLKiTuQLaEPhdNAJ7+Dosc9DOIqNy7Q==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -1992,20 +1997,20 @@ d@1, d@^1.0.1:
     es5-ext "^0.10.50"
     type "^1.0.1"
 
-datatables.net-bs4@>=1.11.3, datatables.net-bs4@^1.10.15, datatables.net-bs4@^1.11.5:
+datatables.net-bs5@>=1.11.3, datatables.net-bs5@^1.11:
   version "1.11.5"
-  resolved "https://registry.yarnpkg.com/datatables.net-bs4/-/datatables.net-bs4-1.11.5.tgz#7767a27991c75716ce7fef1aa6a41d01bfeaefbd"
-  integrity sha512-tYE9MnyWIW4P8nm41yQnCqW4dUPK3M7qsuxQY5rViFFKDEU0bUUNAnE9+69P5/4Exe4uyXaY05xFkD00niPZUA==
+  resolved "https://registry.yarnpkg.com/datatables.net-bs5/-/datatables.net-bs5-1.11.5.tgz#593608d54aeb7f91bcbd80bde304155ba3795663"
+  integrity sha512-1zyh972GtuK1uAb9h8nP3jJ7f/3UgCDq69LAaZS2bVd4mEHECJ6vrZLacxrkOHOs/q/H3v5sEMeZ46vXz8ox4w==
   dependencies:
     datatables.net ">=1.11.3"
     jquery ">=1.7"
 
-datatables.net-fixedcolumns-bs4@^4.0.2:
+datatables.net-fixedcolumns-bs5@^4.0:
   version "4.0.2"
-  resolved "https://registry.yarnpkg.com/datatables.net-fixedcolumns-bs4/-/datatables.net-fixedcolumns-bs4-4.0.2.tgz#1e3724b30fb4760ea50ef9dddc1fb1d630e9a022"
-  integrity sha512-Xa5yqU/vlbYiq+61xXQDk43yoTRyUpFdX2PRfSuho4LmSIIDKrxUMgf93GJB++58Lpm6e+o0hrIudjbtMCeQUg==
+  resolved "https://registry.yarnpkg.com/datatables.net-fixedcolumns-bs5/-/datatables.net-fixedcolumns-bs5-4.0.2.tgz#ba3e76b548477ad1c3ccd0cfd3a814ada155efbf"
+  integrity sha512-+0GBaI3KOjLPOR8huf6ArE2X3HbHMumWJisRe7T056KSOPBCXA7TYgOZIEv6RZb+Gc4kBK8vhlPanqVHGUj6UQ==
   dependencies:
-    datatables.net-bs4 ">=1.11.3"
+    datatables.net-bs5 ">=1.11.3"
     datatables.net-fixedcolumns ">=4.0.0"
     jquery ">=1.7"
 
@@ -2017,12 +2022,12 @@ datatables.net-fixedcolumns@>=4.0.0:
     datatables.net ">=1.11.3"
     jquery ">=1.7"
 
-datatables.net-fixedheader-bs4@^3.2.2:
+datatables.net-fixedheader-bs5@^3.2:
   version "3.2.2"
-  resolved "https://registry.yarnpkg.com/datatables.net-fixedheader-bs4/-/datatables.net-fixedheader-bs4-3.2.2.tgz#5e9a81c9f16987fb69c6b9280141ea959826a75a"
-  integrity sha512-VkN4uqrv8Tq72eQ8dgkl6K8L8qCtklF4ZS3MAcGc2NHa8qTuYNB15owBUqmXObXFBKKkDyJ14ss7XhyvOgYdwg==
+  resolved "https://registry.yarnpkg.com/datatables.net-fixedheader-bs5/-/datatables.net-fixedheader-bs5-3.2.2.tgz#2ca56898503a29bfda948818983f485e119f6874"
+  integrity sha512-6CftSIMWv5p2gzeEWKdsbEFHkU6/egS2svNxzqCOdgKSNfx4Mx7jkrCDKrCehh8CWlFi6WtWo7qg//GIAReQ+g==
   dependencies:
-    datatables.net-bs4 ">=1.11.3"
+    datatables.net-bs5 ">=1.11.3"
     datatables.net-fixedheader ">=3.2.0"
     jquery ">=1.7"
 
@@ -2034,24 +2039,14 @@ datatables.net-fixedheader@>=3.2.0:
     datatables.net ">=1.11.3"
     jquery ">=1.7"
 
-datatables.net-responsive-bs4@^2.2.9:
+datatables.net-responsive-bs5@^2.2:
   version "2.2.9"
-  resolved "https://registry.yarnpkg.com/datatables.net-responsive-bs4/-/datatables.net-responsive-bs4-2.2.9.tgz#18166b9e99c439b8b19bdd7edef8b78572b17b3f"
-  integrity sha512-f6MS0aL7XqjYcFSjup/JRDezbK3cCYFjAB+4vl8dwnGqRP13xwTjXiNqlrRT+fhJJzTQhaHveRpvFUn1qsyn7g==
+  resolved "https://registry.yarnpkg.com/datatables.net-responsive-bs5/-/datatables.net-responsive-bs5-2.2.9.tgz#536593d7f9beb440ddbda84a6187586c1906ef14"
+  integrity sha512-2g+gFyQCek/OR1RQTVPVq42NUQ+cGGeGKV6+qALyO6MCGYqJ4oKNb368EmvyHGCCRdEngiaC/1eesmupF0q20w==
   dependencies:
-    datatables.net-bs4 "^1.10.15"
-    datatables.net-responsive "2.2.9"
     jquery ">=1.7"
 
-datatables.net-responsive@2.2.9:
-  version "2.2.9"
-  resolved "https://registry.yarnpkg.com/datatables.net-responsive/-/datatables.net-responsive-2.2.9.tgz#846d4436691b13261e8e436dc988affe4d262f36"
-  integrity sha512-C+mOY/mG17zzaYPtgqAOsC4JlGddGkKmO/ADNEtNZ41bcPV1/3jJzkOWT3DCZ400NmkXLDz4WObWlPT8WCgfzg==
-  dependencies:
-    datatables.net "^1.10.15"
-    jquery ">=1.7"
-
-datatables.net@>=1.11.3, datatables.net@^1.10.15:
+datatables.net@>=1.11.3:
   version "1.11.5"
   resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-1.11.5.tgz#858a69953a01e1d5b18786769802117b04b8e3c9"
   integrity sha512-nlFst2xfwSWaQgaOg5sXVG3cxYC0tH8E8d65289w9ROgF2TmLULOOpcdMpyxxUim/qEwVSEem42RjkTWEpr3eA==
@@ -2862,19 +2857,19 @@ jest-worker@^27.4.5:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jquery-fullscreen-plugin@^1.1.5:
+jquery-fullscreen-plugin@^1.1:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/jquery-fullscreen-plugin/-/jquery-fullscreen-plugin-1.1.5.tgz#4369394e78646d26908148df673056b09433044d"
   integrity sha512-/kGQZmXlIRIgS6sHmFwHqYDSH46NvksuUGDN3o/o8z+IED23JFHj8rRv53Ee1zsN04SMnb3jQKyDS0RvXN52Xg==
   dependencies:
     jquery ">=1.5"
 
-jquery.json-viewer@^1.4.0:
+jquery.json-viewer@^1.4:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/jquery.json-viewer/-/jquery.json-viewer-1.4.0.tgz#6e0ede8ae3239cb20ac359f663b9aae4ec8a9d94"
   integrity sha512-6H1U/w+/8vMwDH5Im0OveuKPZ1fZWy7hgvR3Cn+HeamQIoWrVqBuRaE2TF/xEc6Hmi3vhQVRqZBmYGKTdOo2tw==
 
-jquery@>=1.5, jquery@>=1.7, jquery@^3.5:
+jquery@>=1.5, jquery@>=1.7, jquery@^3.6:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
   integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
@@ -3338,7 +3333,7 @@ path-to-regexp@0.1.7:
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
 
-pickadate@3.6.4:
+pickadate@3.6:
   version "3.6.4"
   resolved "https://registry.yarnpkg.com/pickadate/-/pickadate-3.6.4.tgz#3ec4df80643166888d4c8656bffefe7bd53cdbae"
   integrity sha512-2QN4aAXJJu1BN6L6ZzFd/rOWu9fzAPwNE9PpNX19YccuOu0c+0rMzO3sl72mNrfTmzR2jcLtvLUtw3PoWvhBrQ==
@@ -3390,11 +3385,6 @@ pkg-up@^3.1.0:
   integrity sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==
   dependencies:
     find-up "^3.0.0"
-
-popper.js@^1.16:
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
-  integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
 
 portfinder@^1.0.28:
   version "1.0.28"

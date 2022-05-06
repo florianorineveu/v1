@@ -1,5 +1,8 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+    globals:
+        site_info: '%site_info%'
+        lune: '%lune%'
 
 when@test:
     twig:

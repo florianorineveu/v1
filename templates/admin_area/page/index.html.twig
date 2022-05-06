@@ -1,0 +1,43 @@
+{% extends 'admin_area/base.html.twig' %}
+
+{% block title %}Page index{% endblock %}
+
+{% block content %}
+    <h1>Page index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Home</th>
+                <th>Slug</th>
+                <th>Type</th>
+                <th>Template</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for page in pages %}
+            <tr>
+                <td>{{ page.id }}</td>
+                <td>{{ page.name }}</td>
+                <td>{{ page.home ? 'Oui' : 'Non' }}</td>
+                <td>{{ page.slug }}</td>
+                <td>{{ page.type }}</td>
+                <td>{{ page.template }}</td>
+                <td>
+                    <a href="{{ path('admin_page_show', {'id': page.id}) }}">show</a>
+                    <a href="{{ path('admin_page_edit', {'id': page.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_page_new') }}">Create new</a>
+{% endblock %}

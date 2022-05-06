@@ -45,8 +45,8 @@
     <div class="list-home">
         {% for project in last_projects %}
             <article>
-                <a href="{{ path('project', {'slug': project.slug}) }}">{{ project.name }}</a>
-                <span>{{ project.shortDescription }}</span>
+                <a href="{{ path('project_show', {'slug': project.slug}) }}">{{ project.name }}</a>
+                <span>{{ project.title }}</span>
             </article>
         {% endfor %}
     </div>

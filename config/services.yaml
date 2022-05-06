@@ -4,7 +4,10 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-
+    site_info:
+        name: Alnilam
+    lune:
+        version: 0.0.1
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -22,3 +25,10 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Doctrine\Listener\InlinedPropertiesListener:
+        tags: [ 'doctrine.event_subscriber' ]
+
+    serializer_doctrine:
+        alias: serializer
+        public: true

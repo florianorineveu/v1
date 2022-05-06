@@ -1,0 +1,13 @@
+{% extends 'admin_area/base.html.twig' %}
+
+{% block title %}Edit Page{% endblock %}
+
+{% block content %}
+    <h1>Edit Page</h1>
+
+    {{ include('admin_area/page/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_page_index') }}">back to list</a>
+
+    {{ include('admin_area/page/_delete_form.html.twig') }}
+{% endblock %}
