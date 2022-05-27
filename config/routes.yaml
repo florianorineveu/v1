@@ -1,12 +1,8 @@
 controllers:
     resource: ../src/Controller/
-    type: annotation
+    type: attribute
 
 admin_area:
     resource: ../src/Controller/AdminArea
-    type: annotation
+    type: attribute
     prefix: /admin-area/
-
-kernel:
-    resource: ../src/Kernel.php
-    type: annotation
