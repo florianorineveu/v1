@@ -8,6 +8,7 @@ parameters:
         name: Alnilam
     lune:
         version: 0.0.1
+    upload_image_block_directory: '%kernel.project_dir%/public/uploads/images'
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -28,6 +29,9 @@ services:
 
     App\Doctrine\Listener\InlinedPropertiesListener:
         tags: [ 'doctrine.event_subscriber' ]
+
+    App\Service\FileUploader:
+        $uploadDirectory: '%upload_image_block_directory%'
 
     serializer_doctrine:
         alias: serializer

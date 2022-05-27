@@ -32,6 +32,8 @@ class TemplateBlock implements HasInlinedProperties
     #[ORM\ManyToOne(targetEntity: Project::class, inversedBy: 'blocks')]
     private $project;
 
+    private $type;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -88,5 +90,12 @@ class TemplateBlock implements HasInlinedProperties
         $this->project = $project;
 
         return $this;
+    }
+
+    public function getType(): string
+    {
+        $reflection = new \ReflectionClass($this->getConfiguration());
+
+        return $reflection->getName();
     }
 }

@@ -3,6 +3,7 @@ twig:
     globals:
         site_info: '%site_info%'
         lune: '%lune%'
+        upload_image_block_directory: '%upload_image_block_directory%'
 
 when@test:
     twig:

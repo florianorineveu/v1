@@ -11,3 +11,43 @@
 
     {{ include('admin_area/project/_delete_form.html.twig') }}
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        /*const addFormToCollection = (e) => {
+            //const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
+            const collectionHolder = document.getElementById(e.currentTarget.dataset.collectionHolderId)
+            const item = document.createElement('fieldset');
+
+            item.innerHTML = collectionHolder
+                .dataset
+                .prototype
+                .replace(
+                    /__name__/g,
+                    collectionHolder.dataset.index
+                );
+
+            collectionHolder.appendChild(item);
+
+            collectionHolder.dataset.index++;
+        };
+
+        document
+            .querySelectorAll('.add_item_link')
+            .forEach(btn => {
+                btn.addEventListener("click", addFormToCollection)
+            });*/
+
+        console.log('INIT');
+        var $types = $('.js-trigger-type');
+
+        $types.change(function () {
+            $this = $(this);
+
+            var $form = $this.closest('form');
+            var data = {};
+        });
+    </script>
+{% endblock javascripts %}

@@ -1,6 +1,7 @@
 <div class="block block-image">
     <figure>
-        <img src="{{ block.configuration.src }}" alt="{{ block.configuration.alt }}">
+        {#<img src="{{ vich_uploader_asset(block.configuration, 'imageFile') }}" alt="{{ block.configuration.alt }}">#}
+        <img src="{{ '/uploads/images/' ~ block.configuration.imagePath }}" alt="{{ block.configuration.alt }}">
         <figcaption>
             {{ block.configuration.caption|raw }}
         </figcaption>

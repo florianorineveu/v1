@@ -43,7 +43,7 @@ class Project
     public function __construct()
     {
         $this->enabled = false;
-        $this->blocks = new ArrayCollection();
+        $this->blocks  = new ArrayCollection();
     }
 
     public function getId(): ?Uuid

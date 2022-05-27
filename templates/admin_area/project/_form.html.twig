@@ -1,5 +1,9 @@
 {% form_theme form 'bootstrap_5_layout.html.twig' %}
 {{ form_start(form) }}
     {{ form_widget(form) }}
+
+    <button type="button" class="add_item_link" data-collection-holder-id="project_blocks">Add a tag</button>
+    <hr>
+
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

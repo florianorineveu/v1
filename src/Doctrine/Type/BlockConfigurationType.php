@@ -3,6 +3,7 @@
 namespace App\Doctrine\Type;
 
 use App\Model\TemplateBlock\ConfigurationInterface;
+use App\Model\TemplateBlock\ImageBlock;
 use App\Model\TemplateBlock\InvalidConfiguration;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\JsonType;
@@ -21,8 +22,14 @@ class BlockConfigurationType extends JsonType
 
     public function convertToDatabaseValue($configuration, AbstractPlatform $platform)
     {
+        if ($configuration instanceof ImageBlock) {
+            //dump($configuration);
+        }
         $rawConfiguration = self::$serializer->normalize($configuration);
-
+        if ($configuration instanceof ImageBlock) {
+            //dump($rawConfiguration);
+            //die();
+        }
         return parent::convertToDatabaseValue($rawConfiguration, $platform);
     }
 

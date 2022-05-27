@@ -5,6 +5,8 @@ import 'jquery-fullscreen-plugin/jquery.fullscreen-min';
 
 import './admin/styles/admin.scss';
 
+global.$ = global.jQuery = $;
+
 $(function() {
     $('#fullscreenToggler').on('click', function (e) {
         $(document).toggleFullScreen();

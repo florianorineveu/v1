@@ -28,11 +28,13 @@ class ProjectType extends AbstractType
                 'required' => false,
             ])
             ->add('blocks', CollectionType::class, [
-                'label'        => 'Blocs',
-                'entry_type'   => TemplateBlockType::class,
-                'allow_add'    => true,
-                'allow_delete' => true,
-                'required'     => false,
+                'label'         => 'Blocs',
+                'entry_type'    => TemplateBlockType::class,
+                //'allow_add'     => true,
+                //'allow_delete'  => true,
+                'required'      => false,
+                //'by_reference'  => false,
+                'entry_options' => ['label' => false],
             ])
         ;
     }

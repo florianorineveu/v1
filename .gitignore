@@ -25,4 +25,5 @@ yarn-error.log
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
-.idea/
+###> alnilam/other ###
+###< alnilam/other ###

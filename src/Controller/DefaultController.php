@@ -18,7 +18,7 @@ use Symfony\Component\Routing\RouterInterface;
 class DefaultController extends AbstractController
 {
     #[Route('/', name: 'home')]
-    public function index(/*EntityManagerInterface $em, */ProjectRepository $projectRepository)
+    public function index(/*EntityManagerInterface $em, */ProjectRepository $projectRepository, Request $request)
     {
         /*$blockConfiguration = new TextBlock();
         $blockConfiguration->content = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consectetur corporis delectus dolor doloremque id impedit ipsam ipsum labore, laudantium magnam magni maiores nulla officiis pariatur quae tenetur voluptatem voluptates?';
@@ -33,7 +33,6 @@ class DefaultController extends AbstractController
         ;
 
         $em->flush();*/
-
         $alnilamBirthday = new \DateTime('2020-01-31 18:42');
         $dateDiff        = date_diff($alnilamBirthday, new \DateTime());
 

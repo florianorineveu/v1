@@ -3,12 +3,18 @@
 namespace App\Controller\AdminArea;
 
 use App\Entity\Project;
+use App\Entity\TemplateBlock;
 use App\Form\AdminArea\ProjectType;
+use App\Model\TemplateBlock\ImageBlock;
 use App\Repository\ProjectRepository;
+use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[Route('/project', name: 'admin_project_')]
 class ProjectController extends AbstractController
@@ -48,16 +54,32 @@ class ProjectController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Project $project, ProjectRepository $projectRepository): Response
+    public function edit(FileUploader $fileUploader, Request $request, Project $project, ProjectRepository $projectRepository): Response
     {
+        /*$imageBlock = new TemplateBlock();
+        $imageBlock->setTitle('Image')->setPosition(10)->setConfiguration(new ImageBlock());
+        $project->addBlock($imageBlock);*/
         $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);
 
-        dump($project->getBlocks()->toArray()[0]->getConfiguration());
 
         if ($form->isSubmitted() && $form->isValid()) {
-            dump($project->getBlocks()->toArray()[0]->getConfiguration());
-            //die();
+            foreach ($project->getBlocks() as $block) {
+                // TODO: Make it recursive
+                if ($block->getConfiguration() instanceof ImageBlock) {
+                    /** @var UploadedFile $imageFile */
+                    $imageFile = $form->get('blocks')[2]->get('configuration')->get('imageFile')->getData();
+                    $newFilename = $fileUploader->upload($imageFile);
+
+                    if (!$newFilename) {
+                        $this->addFlash('error', 'Erreur upload.');
+                        die();
+                    }
+
+                    $project->getBlocks()[2]->getConfiguration()->imagePath = $newFilename;
+                }
+            }
+
             $projectRepository->add($project);
             return $this->redirectToRoute('admin_project_index', [], Response::HTTP_SEE_OTHER);
         }
