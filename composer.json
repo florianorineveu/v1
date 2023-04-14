@@ -1,5 +1,6 @@
 {
     "require": {
+        "php": "^7.4",
         "symfony/flex": "^1.4",
         "sensio/framework-extra-bundle": "^5.4",
         "symfony/asset": "^4.4",
@@ -51,7 +52,8 @@
     "config": {
         "allow-plugins": {
             "symfony/flex": true,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "php-http/discovery": true
         }
     },
     "extra": {
